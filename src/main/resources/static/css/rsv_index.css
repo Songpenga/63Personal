@@ -12,16 +12,6 @@
   background-color: #202020;
 }
 
-
-body {
-  font-family: 나눔고딕,"Nanum Gothic",Gulim,"굴림",sans-serif;
-  font-size: 12px;
-  width: 100%;
-  line-height: 18px;
-  font-weight: 400;
-}
-
-
 .customer-container {
   display: flex;
   margin-top: 30px;
@@ -49,15 +39,6 @@ body {
 .customer {
   padding: 30px;
   margin: 10px;
-}
-
-.child {
-  margin-left: 20px;
-}
-
-.view-container {
-  padding-top: 20px;
-  border-top: 2px solid #ccc;
 }
 
 .cal-toolbar{

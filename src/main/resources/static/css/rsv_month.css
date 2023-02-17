@@ -1,70 +1,6 @@
-.week-head,
-.day-header {
-  height: 60px;
-  line-height: 60px;
-  width: 100px;
-}
-
 .cal-toolbar {
   display: flex;
   justify-content: center;
-}
-
-table, tr, td, th{
-  border-collapse: collapse;
-}
-
-.tbl_list {
-  table-layout: fixed;
-  width: 100%;
-  border: 0;
-}
-
-.cal_right {
-  position: relative;
-  width: 213px;
-  float: left;
-}
-
-#resvMon > thead {
-  font-weight: bold;
-  height: 50px;
-}
-
-#resvMon > tbody {
-  height: 300px;
-  width: 400px;
-  align-items: flex-end;
-}
-
-.cal_right .tbl_list thead th {
-  font-weight: 700;
-  color: #333333;
-  background-color: #ffffff;
-  padding: 17px 0 15px 0;
-  border-bottom: 1px solid #D9D9D9;
-  text-align: center;
-}
-
-.cal_right .tbl_list tbody .first td {
-  padding-top: 15px;
-  background-position: right 21px;
-}
-
-
-
-.sun {
-  color: red;
-}
-.cal-toolbar {
-  display: flex;
-}
-
-.resvTime{
-  margin-left: 10px;
-  padding: 20px;
-  background-color: gray;
-  border-radius: 0px;
 }
 
 .prebBtn,.nextBtn {
@@ -75,7 +11,49 @@ table, tr, td, th{
   height: 30px;
 }
 
-.cal_right .tbl_list tbody td {
+.cal_resv{
+  display: flex;
+  justify-content: center;
+  padding: 35px 30px 35px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.cal_left{
+  display: flex;
+  width: 512px;
+  padding: 20px 50px 20px 50px;
+}
+
+#resvMon > thead {
+  font-weight: bold;
+  height: 50px;
+}
+
+#resvMon > tbody {
+  height: 300px;
+  width: 350px;
+  align-items: flex-end;
+}
+
+.cal_resv .cal_right .tbl_time_list thead th {
+  font-weight: 700;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 17px 0 15px 0;
+  text-align: center;
+}
+
+.cal_right .tbl_time_list tbody .first td {
+  padding-top: 15px;
+  background-position: right 21px;
+}
+
+.cal_right .tbl_time_list tbody td {
   padding: 7px 0;
   text-align: center;
+}
+
+.sun {
+  color: red;
 }

@@ -1,0 +1,19 @@
+table, tr, td, th{
+  border-collapse: collapse;
+}
+
+body, div,
+ul, ol, li, 
+h1, h2, h3, h4, h5, h6, 
+pre, code, form, input, textarea, p, blockquote, table, tr, th, td, img{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 나눔고딕,"Nanum Gothic",Gulim,"굴림",sans-serif;
+  font-size: 12px;
+  width: 100%;
+  line-height: 18px;
+  font-weight: 400;
+}

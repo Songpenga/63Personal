@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserve</title>
-    <link rel="stylesheet" href="/static/css/rsv_index.css" />
     <link rel="stylesheet" href="/static/css/rsv_common.css" />
+    <link rel="stylesheet" href="/static/css/rsv_index.css" />
+    <link rel="stylesheet" href="/static/css/rsv_default.css" />
     <link rel="stylesheet" href="/static/css/rsv_month.css" />
   </head>
   <body>
@@ -16,7 +17,7 @@
       </header>
 
       <!-- 예약 인원 -->
-      <div class="customer-container">
+      <!-- <div class="customer-container">
         <span class="customer">성인</span>
 
         <button type="button" id name="minusBtn" class="sp-minus button-init"></button>
@@ -28,98 +29,116 @@
         <button type="button" id name="minusBtn" class="sp-minus button-init"></button>
         <span class="count">1</span>
         <button type="button" id name="plusBtn" class="sp-plus button-init"></button>
-        <!-- 예약 날짜 -->     
+        <!-- 예약 날짜 -->           
+      </div>    -->
+
       
-      </div>      
-        <div class="cal-toolbar">
-          <button class="prebBtn"><</button>
-          <h1>2023.2</h1>
-          <button class="nextBtn">></button>
+
+      <div class="cal-toolbar">
+        예약 일시 선택
+        <button class="prebBtn"><</button>        
+        <h1>2023.2</h1>
+        <button class="nextBtn">></button>
+      
+      </div>
+ 
+      <div class="cal_resv">        
+        <div class="cal-left">
+          
+          <table id="resvMon" class="date-month" width="600" height="400" border="1">
+            <thead>
+                <tr>
+                  <th class="sun">일</th>
+                  <th>월</th>
+                  <th>화</th>
+                  <th>수</th>
+                  <th>목</th>
+                  <th>금</th>
+                  <th>토</th>
+                </tr>
+            </thead>
+            <tbody id="tbl-month" align="top">
+              <tr>
+                  <td class="sun">1</td>
+                  <td class="">2</td>
+                  <td class="">3</td>
+                  <td class="">4</td>
+                  <td class="">5</td>
+                  <td class="">6</td>
+                  <td class="">7</td>
+              </tr>
+              <tr>
+                <td class="sun">8</td>
+                <td class="">9</td>
+                <td class="">10</td>
+                <td class="">11</td>
+                <td class="">12</td>
+                <td class="">13</td>
+                <td class="">14</td>
+              </tr>
+              <tr>
+                <td class="sun">15</td>
+                <td class="">16</td>
+                <td class="">17</td>
+                <td class="">18</td>
+                <td class="">19</td>
+                <td class="">20</td>
+                <td class="">21</td>                   
+            </tr>
+                <tr>
+                  <td class="sun">22</td>
+                  <td class="">23</td>
+                  <td class="">24</td>
+                  <td class="">25</td>
+                  <td class="">26</td>
+                  <td class="">27</td>
+                  <td class="">28</td>
+                </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div div class="calendar_reserv">
-          <div class="cal-left">
-            <div class="bx_cal">
-              <table id="resvMon" class="date-month" width="700" height="400" border="1">
-                <thead>
-                    <tr>
-                        <th class="sun">일</th>
-                        <th>월</th>
-                        <th>화</th>
-                        <th>수</th>
-                        <th>목</th>
-                        <th>금</th>
-                        <th>토</th>
-                    </tr>
-                </thead>
-                <tbody id="tbl-month" align="top">
-                    <tr>
-                        <td class="sun">1</td>
-                        <td class="">2</td>
-                        <td class="">3</td>
-                        <td class="">4</td>
-                        <td class="">5</td>
-                        <td class="">6</td>
-                        <td class="">7</td>
-                    </tr>
-                    <tr>
-                      <td class="sun">8</td>
-                      <td class="">9</td>
-                      <td class="">10</td>
-                      <td class="">11</td>
-                      <td class="">12</td>
-                      <td class="">13</td>
-                      <td class="">14</td>
-                  </tr>
-                  <tr>
-                    <td class="sun">15</td>
-                    <td class="">16</td>
-                    <td class="">17</td>
-                    <td class="">18</td>
-                    <td class="">19</td>
-                    <td class="">20</td>
-                    <td class="">21</td>
-                    
-                </tr>
-                    <tr>
-                      <td class="sun">22</td>
-                      <td class="">23</td>
-                      <td class="">24</td>
-                      <td class="">25</td>
-                      <td class="">26</td>
-                      <td class="">27</td>
-                      <td class="">28</td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="cal_right">
-              <table class="tbl_list">           
-                <thead>
-                  <tr>
-                    <th scope="col">이용시간</th>
-                  </tr>
-                </thead>
-                <tbody id="resv_limit_seat">
-                  <tr class="first">
-                    <td>
-                      <input type="checkbox" id="time0" onclick="" name="time" value="1">
-                      <label class="la_check" for="time0">12:00~14:00</label>
-                    </td>
-                  </tr>
-                  <tr class="first">
-                    <td>
-                      <input type="checkbox" id="time2" onclick="" name="time" value="2">
-                      <label class="la_check" for="time2">15:00~17:00</label>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+        <!-- <div class="cal_right">
+          <table class="tbl_time_list">           
+            <thead>
+              <tr>
+                <th scope="col">이용시간</th>
+              </tr>
+            </thead>
+            <tbody id="resv_limit_seat">
+              <tr class="first">
+                <td>
+                  <input type="checkbox" id="time0" onclick="" name="time" value="1">
+                  <label class="la_check" for="time0">12:00~14:00</label>
+                </td>
+              </tr>
+              <tr class="first">
+                <td>
+                  <input type="checkbox" id="time2" onclick="" name="time" value="2">
+                  <label class="la_check" for="time2">15:00~17:00</label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+      </div>
+
+      <div class="hours-wrap">
+        <div class="box">
+          이용시간 선택
+          <select id="selectBizHoursNo" name="selectBizHoursNo">
+            <option value="1||1">중식-평일 12:00 ~ 15:00</option>
+            <option value="46||1" selected="selected">석식-평일 18:00 ~ 21:00</option>
+          </select>
+        </div>
+        <div class="box">
+          방문시간 선택
+          <select id="visitResvDateStr" name="visitResvDateStr">
+            <option value="202302211800">18:00</option>
+            <option value="202302211830">18:30</option><option value="202302211900">19:00</option>
+            <option value="202302211930">19:30</option></select>
         </div>
       </div>
     </div>
-    <!-- container -->
   </body>
 </html>
