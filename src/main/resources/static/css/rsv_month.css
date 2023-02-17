@@ -1,0 +1,81 @@
+.week-head,
+.day-header {
+  height: 60px;
+  line-height: 60px;
+  width: 100px;
+}
+
+.cal-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+table, tr, td, th{
+  border-collapse: collapse;
+}
+
+.tbl_list {
+  table-layout: fixed;
+  width: 100%;
+  border: 0;
+}
+
+.cal_right {
+  position: relative;
+  width: 213px;
+  float: left;
+}
+
+#resvMon > thead {
+  font-weight: bold;
+  height: 50px;
+}
+
+#resvMon > tbody {
+  height: 300px;
+  width: 400px;
+  align-items: flex-end;
+}
+
+.cal_right .tbl_list thead th {
+  font-weight: 700;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 17px 0 15px 0;
+  border-bottom: 1px solid #D9D9D9;
+  text-align: center;
+}
+
+.cal_right .tbl_list tbody .first td {
+  padding-top: 15px;
+  background-position: right 21px;
+}
+
+
+
+.sun {
+  color: red;
+}
+.cal-toolbar {
+  display: flex;
+}
+
+.resvTime{
+  margin-left: 10px;
+  padding: 20px;
+  background-color: gray;
+  border-radius: 0px;
+}
+
+.prebBtn,.nextBtn {
+  border: none;
+  margin: 15px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.cal_right .tbl_list tbody td {
+  padding: 7px 0;
+  text-align: center;
+}
