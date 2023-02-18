@@ -11,28 +11,12 @@
     <link rel="stylesheet" href="/static/css/rsv_month.css" />
   </head>
   <body>
+
+    <header class="header-container">
+      <h1 class="brand-logo">Hotsix header</h1>
+    </header>
+
     <div class="container">
-      <header class="header-container">
-        <h1 class="brand-logo">Hotsix header</h1>
-      </header>
-
-      <!-- 예약 인원 -->
-      <!-- <div class="customer-container">
-        <span class="customer">성인</span>
-
-        <button type="button" id name="minusBtn" class="sp-minus button-init"></button>
-        <span class="count">1</span>
-        <button type="button" id name="plusBtn" class="sp-plus button-init"></button>
-        </button>
-
-        <span class="customer child">소인</span>
-        <button type="button" id name="minusBtn" class="sp-minus button-init"></button>
-        <span class="count">1</span>
-        <button type="button" id name="plusBtn" class="sp-plus button-init"></button>
-        <!-- 예약 날짜 -->           
-      </div>    -->
-
-      
 
       <div class="cal-toolbar">
         예약 일시 선택
@@ -138,6 +122,214 @@
             <option value="202302211830">18:30</option><option value="202302211900">19:00</option>
             <option value="202302211930">19:30</option></select>
         </div>
+      </div>
+
+      <div class="menu_select">
+        메뉴선택
+        <ul class="menu_choice_list clfix">
+          <li class="re_menu_sel">	
+            <input type="hidden" id="a_egood_cd" name="a_egood_cd" value="01605210950002">	
+            <input type="hidden" id="sub_type" name="sub_type" value="01">	
+            <input type="hidden" id="add_limit_cnt0" name="add_limit_cnt" value="0">	
+            <input type="hidden" id="add_reserve_seq" name="add_reserve_seq" value="686605">	
+            <input type="checkbox" id="input_add_product0" name="ckbCheck" value="130000/0" title="주중 저녁 (대인) 선택" onclick="funcAddGoodsChecked(this,'0');">
+           
+            <label class="la_check" for="input_add_product0">주중 저녁</label>	
+            <span class="img">
+              <img width="180" height="126" src="https://www.63restaurant.co.kr/FileStorage/GOOD/01605210950002/01605210950002_1.jpg" alt="배너">
+            </span>	
+            <div class="bx_price">		
+              <div class="price_info">			                
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+            </p>
+            <p class="price">
+              <span>소인</span>
+              <span class="mem_num">117,000원</span>
+          </p>		
+            </div>		
+            <div class="count">			
+              <input type="text" class="inp_text" name="txtAmount" id="txtAmount_0" title="인원수 입력" placeholder="0" value="0" onblur="funcTotalAmtCalc(this.value);" readonly="readonly">			
+              <span class="add">				
+              <input type="image" src="/r63/images/ko/common/btn_count_up.gif" alt="인원수 증가" onclick="funcQTYcontrol('plus', '0','0');">
+            </span>			
+              <span class="down">
+            </span>		
+            </div>	
+          </div>	
+            <a href="#" class="btn_more href_link"></a>	
+            <div id="layer_type02" class="menu_sel clfix rv_layer_type02 lay_i1" style="display:none">
+              <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left;"></span>
+              </div>
+            </div>
+          </li>
+          <li class="re_menu_sel">	
+            <input type="hidden" id="a_egood_cd" name="a_egood_cd" value="01605210950002">	
+            <input type="hidden" id="sub_type" name="sub_type" value="01">	
+            <input type="hidden" id="add_limit_cnt0" name="add_limit_cnt" value="0">	
+            <input type="hidden" id="add_reserve_seq" name="add_reserve_seq" value="686605">	
+            <input type="checkbox" id="input_add_product0" name="ckbCheck" value="130000/0" title="주중 저녁 (대인) 선택" onclick="funcAddGoodsChecked(this,'0');">
+           
+            <label class="la_check" for="input_add_product0">주중 저녁</label>	
+            <span class="img">
+              <img width="180" height="126" src="https://www.63restaurant.co.kr/FileStorage/GOOD/01605210950002/01605210950002_1.jpg" alt="배너">
+            </span>	
+            <div class="bx_price">		
+              <div class="price_info">			                
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+            </p>
+            <p class="price">
+              <span>소인</span>
+              <span class="mem_num">117,000원</span>
+          </p>		
+            </div>		
+            <div class="count">			
+              <input type="text" class="inp_text" name="txtAmount" id="txtAmount_0" title="인원수 입력" placeholder="0" value="0" onblur="funcTotalAmtCalc(this.value);" readonly="readonly">			
+              <span class="add">				
+              <input type="image" src="" alt="인원수 증가" onclick="funcQTYcontrol('plus', '0','0');">
+            </span>			
+              <span class="down">
+            </span>		
+            </div>	
+          </div>	
+            <a href="#" class="btn_more href_link"></a>	
+            <div id="layer_type02" class="menu_sel clfix rv_layer_type02 lay_i1" style="display:none">
+              <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left;"></span>
+              </div>
+            </div>
+          </li>
+          <li class="re_menu_sel">	
+            <input type="hidden" id="a_egood_cd" name="a_egood_cd" value="01605210950002">	
+            <input type="hidden" id="sub_type" name="sub_type" value="01">	
+            <input type="hidden" id="add_limit_cnt0" name="add_limit_cnt" value="0">	
+            <input type="hidden" id="add_reserve_seq" name="add_reserve_seq" value="686605">	
+            <input type="checkbox" id="input_add_product0" name="ckbCheck" value="130000/0" title="주중 저녁 (대인) 선택" onclick="funcAddGoodsChecked(this,'0');">
+           
+            <label class="la_check" for="input_add_product0">주중 저녁</label>	
+            <span class="img">
+              <img width="180" height="126" src="	https://www.63restaurant.co.kr/FileStorage/GOOD/01605210990001/01605210990001_1.jpg" alt="배너">
+            </span>	
+            <div class="bx_price">		
+              <div class="price_info">			                
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+            </p>
+            <p class="price">
+              <span>소인</span>
+              <span class="mem_num">117,000원</span>
+          </p>		
+            </div>		
+            <div class="count">			
+              <input type="text" class="inp_text" name="txtAmount" id="txtAmount_0" title="인원수 입력" placeholder="0" value="0" onblur="funcTotalAmtCalc(this.value);" readonly="readonly">			
+              <span class="add">				
+              <input type="image" src="" alt="인원수 증가" onclick="funcQTYcontrol('plus', '0','0');">
+            </span>			
+              <span class="down">
+            </span>		
+            </div>	
+          </div>	
+            <a href="#" class="btn_more href_link"></a>	
+            <div id="layer_type02" class="menu_sel clfix rv_layer_type02 lay_i1" style="display:none">
+              <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left;"></span>
+              </div>
+            </div>
+          </li>
+      </div>
+
+      <div>
+        예약자 입력폼
+        <div class="re_content mgb0">
+          <p class="reservation_custom_chk_top">
+            <input type="checkbox" id="reservation_custom_chk" name="reservation_custom_chk" value="" title="예약고객과 이용고객이 다를 경우 체크" onclick="funcUserInputShow(this);">
+            <label for="reservation_custom_chk">예약고객과 이용고객이 다를 경우 체크해 주세요.</label>
+          </p>
+          <table class="tbl_st02" summary="예약고객 정보입력하는곳으로 이름, 연락처, 이메일, 남기실말씀을 적어줍니다.">
+          <caption>예약고객 정보입력</caption>
+          <colgroup>
+            <col width="15%"><col width="38%"><col width="20%"><col width="38%">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th width="75" scope="row"><span class="bul01">
+              <label for="input_custom_name">이름 *</label></span></th>
+              <td width="356">
+                
+                <input type="text" id="cust_nm" name="cust_nm" value="" style="width:180px" maxlength="10" title="예약고객 이름 입력" onclick="logincheck();" onkeyup="setFilter(this);" onkeypress="setFilter(this);">
+              </td>
+              <th width="104" scope="row"><span class="bul01">
+              <label for="input_custom_tel">휴대폰 번호 *</label></span></th>
+              <td width="392">
+                <select id="mobile1" title="예약고객 연락처 앞자리 선택" style="width:74px" name="mobile1" onclick="logincheck();">
+                  
+                  <option value="010">010</option>
+                  
+                  <option value="011">011</option>
+                  
+                  <option value="016">016</option>
+                  
+                  <option value="017">017</option>
+                  
+                  <option value="018">018</option>
+                  
+                  <option value="019">019</option>
+                  
+                </select> - <input type="text" id="mobile2" name="mobile2" value="" style="width:54px" title="예약고객 연락처 가운데자리 입력" maxlength="4" onkeyup="isNumber(this);" onclick="logincheck();"> - <input type="text" id="mobile3" name="mobile3" value="" style="width:54px" title="예약고객 연락처 뒷자리 입력" maxlength="4" onkeyup="isNumber(this);" onclick="logincheck();">
+              </td>
+            </tr>
+            <tr id="email_area">
+              <th scope="row"><span class="bul01"><label for="input_custom_email">이메일</label></span></th>
+              <td colspan="3">
+                <input type="text" id="email_1" name="email_1" value="" style="width:118px" title="예약고객 이메일 아이디 입력" maxlength="25" onclick="logincheck();" onkeyup="setFilter(this);" onkeypress="setFilter(this);"> @ <input type="text" name="email_txt" id="email_txt" value="" style="width:109px" title="예약고객 이메일 도메인 직접입력" maxlength="50" onclick="logincheck();" onkeyup="setFilter(this);" onkeypress="setFilter(this);">
+                <select name="email_2" id="email_2" title="예약고객 이메일 도메인 선택" style="width:138px" onchange="select_mail('email_');" onclick="logincheck();">
+                           
+                      <option value="self">선택하세요</option>
+                    
+                      <option value="naver.com">naver.com</option>
+                    
+                      <option value="daum.net">daum.net</option>
+                    
+                      <option value="hotmail.com">hotmail.com</option>
+                    
+                      <option value="msn.com">msn.com</option>
+                    
+                      <option value="nate.com">nate.com</option>
+                    
+                      <option value="yahoo.co.kr">yahoo.co.kr</option>
+                    
+                      <option value="gmail.com">gmail.com</option>
+                    
+                      <option value="self">직접입력</option>
+                    
+                </select>
+              </td>
+            </tr>
+            <tr id="order_msg1_area">
+              <th scope="row" class="last"><span class="bul01"><label for="input_ment">남기실 말씀</label></span></th>
+              <td colspan="3" class="last">
+                <textarea id="order_msg" cols="10" rows="10" style="width:673px;height:78px" title="예약고객 남기실 말씀을 입력해 주세요" name="order_msg" onkeyup="setFilter(this); chk_Length(this,'200','남기실 말씀');" onkeypress="setFilter(this);" maxlength="150" onclick="logincheck();"></textarea>
+                <br><span style="float:right;padding-right:32px;">(<span id="msglen">0</span>/200byte)</span>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+
+        <div class="total_reservation_info clfix">
+
+          <ul>
+            <li><input type="radio" id="optPayType1" name="payType" value="2"><label class="la_check" for="optPayType1">신용카드</label></li>
+          </ul>
+          <p>총 결제 금액<span class="price"><strong>0원</strong><span class="vat">(0인 / VAT포함)</span></span></p>
+        </div>
+
+        <a href="#" class="btn_brown_st01 btn_re_pay" onclick="funcCheckRSV('buy');return false;">결제하기</a>
       </div>
     </div>
   </body>

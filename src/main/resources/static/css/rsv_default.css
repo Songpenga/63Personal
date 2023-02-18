@@ -11,9 +11,9 @@ pre, code, form, input, textarea, p, blockquote, table, tr, th, td, img{
 }
 
 body {
-  font-family: 나눔고딕,"Nanum Gothic",Gulim,"굴림",sans-serif;
-  font-size: 12px;
-  width: 100%;
-  line-height: 18px;
+  font-weight: 500;
+  font-size: 14px;
   font-weight: 400;
+  color: #333;
+  word-wrap: break-word;
 }
