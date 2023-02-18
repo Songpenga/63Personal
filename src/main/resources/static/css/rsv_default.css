@@ -1,5 +1,8 @@
 table, tr, td, th{
   border-collapse: collapse;
+  text-align:start ;
+  vertical-align :text-top;
+  margin: 2%;  
 }
 
 body, div,
@@ -10,10 +13,40 @@ pre, code, form, input, textarea, p, blockquote, table, tr, th, td, img{
   padding: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500px;
+}
+
 body {
   font-weight: 500;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 17px;
   color: #333;
   word-wrap: break-word;
+  width: 100%;
+}
+
+
+button, input, select, textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, hr, legend {
+  *display: none;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  height: 0;
+}
+
+caption, th {
+  text-align: left;
 }

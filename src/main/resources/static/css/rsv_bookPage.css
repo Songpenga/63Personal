@@ -1,0 +1,60 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1cm;
+  padding: 40px 20px;
+
+  width: 100%;
+  height: 100px;
+
+  background-color: #183a1d;
+}
+
+.container{
+  padding-bottom: 70px;
+  padding: 70px;
+
+  justify-content: center;
+  
+  display:table;
+  table-layout:fixed;
+  width: 1200px;
+}
+
+/* .customer-container {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+   -------------------------------> 예약자 인원수, 잠시 중단
+} */
+
+.brand-logo {
+  color: aliceblue;
+  font-size: 200%;
+}
+
+.resv_title{
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 200%;
+}
+
+.resv_sub_title{
+  border-top: 2px solid #2B2725;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  display: block;
+  height: 33px;
+}
+
+.cal_toolbar, .resv_sub_title_str{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120%;
+}

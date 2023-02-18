@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserve</title>
-    <link rel="stylesheet" href="/static/css/rsv_common.css" />
-    <link rel="stylesheet" href="/static/css/rsv_index.css" />
     <link rel="stylesheet" href="/static/css/rsv_default.css" />
+    <link rel="stylesheet" href="/static/css/rsv_common.css" />
+    <link rel="stylesheet" href="/static/css/rsv_customer.css" />
+    <link rel="stylesheet" href="/static/css/rsv_bookPage.css" />
     <link rel="stylesheet" href="/static/css/rsv_month.css" />
   </head>
   <body>
@@ -16,14 +17,15 @@
       <h1 class="brand-logo">Hotsix header</h1>
     </header>
 
-    <div class="container">
-
-      <div class="cal-toolbar">
-        예약 일시 선택
-        <button class="prebBtn"><</button>        
-        <h1>2023.2</h1>
-        <button class="nextBtn">></button>
-      
+    <div class="container">    
+      <h1 class="resv_title">예약하기</h1>
+      <div class="resv_sub_title">
+        <h3 class="resv_sub_title_str">예약 일시 선택</h3>
+        <div class="cal_toolbar">
+          <button class="prebBtn"><</button>        
+          <h1>2023.2</h1>
+          <button class="nextBtn">></button> 
+        </div>
       </div>
  
       <div class="cal_resv">        
@@ -107,25 +109,27 @@
         </div> -->
       </div>
 
-      <div class="hours-wrap">
-        <div class="box">
-          이용시간 선택
-          <select id="selectBizHoursNo" name="selectBizHoursNo">
-            <option value="1||1">중식-평일 12:00 ~ 15:00</option>
-            <option value="46||1" selected="selected">석식-평일 18:00 ~ 21:00</option>
-          </select>
-        </div>
-        <div class="box">
-          방문시간 선택
-          <select id="visitResvDateStr" name="visitResvDateStr">
-            <option value="202302211800">18:00</option>
-            <option value="202302211830">18:30</option><option value="202302211900">19:00</option>
-            <option value="202302211930">19:30</option></select>
+      <div class="hours-container">
+        <div class="hours-wrap">
+          <div class="box">
+            이용시간 선택
+            <select id="selectBizHoursNo" name="selectBizHoursNo">
+              <option value="1||1">중식-평일 12:00 ~ 15:00</option>
+              <option value="46||1" selected="selected">석식-평일 18:00 ~ 21:00</option>
+            </select>
+          </div>
+          <div class="box">
+            방문시간 선택
+            <select id="visitResvDateStr" name="visitResvDateStr">
+              <option value="202302211800">18:00</option>
+              <option value="202302211830">18:30</option><option value="202302211900">19:00</option>
+              <option value="202302211930">19:30</option></select>
+          </div>
         </div>
       </div>
 
       <div class="menu_select">
-        메뉴선택
+        <h3 class="re_st01 color_point">메뉴선택</h3>
         <ul class="menu_choice_list clfix">
           <li class="re_menu_sel">	
             <input type="hidden" id="a_egood_cd" name="a_egood_cd" value="01605210950002">	
@@ -151,8 +155,7 @@
             </div>		
             <div class="count">			
               <input type="text" class="inp_text" name="txtAmount" id="txtAmount_0" title="인원수 입력" placeholder="0" value="0" onblur="funcTotalAmtCalc(this.value);" readonly="readonly">			
-              <span class="add">				
-              <input type="image" src="/r63/images/ko/common/btn_count_up.gif" alt="인원수 증가" onclick="funcQTYcontrol('plus', '0','0');">
+              <span class="add">				              
             </span>			
               <span class="down">
             </span>		
@@ -189,8 +192,7 @@
             </div>		
             <div class="count">			
               <input type="text" class="inp_text" name="txtAmount" id="txtAmount_0" title="인원수 입력" placeholder="0" value="0" onblur="funcTotalAmtCalc(this.value);" readonly="readonly">			
-              <span class="add">				
-              <input type="image" src="" alt="인원수 증가" onclick="funcQTYcontrol('plus', '0','0');">
+              <span class="add">				              
             </span>			
               <span class="down">
             </span>		
@@ -227,8 +229,7 @@
             </div>		
             <div class="count">			
               <input type="text" class="inp_text" name="txtAmount" id="txtAmount_0" title="인원수 입력" placeholder="0" value="0" onblur="funcTotalAmtCalc(this.value);" readonly="readonly">			
-              <span class="add">				
-              <input type="image" src="" alt="인원수 증가" onclick="funcQTYcontrol('plus', '0','0');">
+              <span class="add">				              
             </span>			
               <span class="down">
             </span>		
