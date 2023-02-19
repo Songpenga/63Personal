@@ -1,0 +1,137 @@
+.re_content {
+  position: relative;
+  margin: 0 0 30px 0;
+  border: 1px solid #d9d9d9;
+  border-top: 0 none;
+}
+
+.re_content02 {
+  position: relative;
+}
+
+.tbl_st02, .email_area{
+  text-align: left;
+  border-top: 1px solid #c0bcbc;
+  border-bottom: 1px solid #c0bcbc;
+}
+
+.re_st01.color_point {
+  border-top: 2px solid #2B2725;
+  /* background: #F7F7F7 url(/r63/images/ko/reservation/bg_h3_tit2.gif) no-repeat scroll 30px top; */
+}
+
+.re_st01 {
+  height: 33px;
+  padding: 16px 20px 0 20px;
+  /* border: 1px solid #d9d9d9; */
+  /* background: url(/r63/images/ko/reservation/bg_h3_tit.gif) no-repeat 30px top; */
+}
+
+.menu_choice_list li.re_menu_sel .price_info .price {
+  color: #000000;
+  font-weight: 200;
+}
+
+.menu_choice_list li.re_menu_sel label {
+  font-size: 12px;
+  color: #4d4d4d;
+  font-weight: 700;
+}
+
+.reservation_custom_chk_top {
+  position: absolute;
+  right: 20px;
+  top: -34px;
+  color: #343434;
+}
+
+.re_st01.color_point {
+  border-top: 2px solid #2B2725;
+}
+
+.re_st01 {
+  height: 33px;
+  padding: 16px 20px 0 20px;
+  border: 1px solid #d9d9d9;
+}
+
+.tbl_st02 {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tbl_st02 th {
+  padding: 13px 0 13px 28px;
+  /* border-bottom: 1px solid #d9d9d9; */
+  font-weight: 700;
+}
+
+.tbl_st02 td {
+  padding: 13px 0;
+  /* border-bottom: 1px solid #d9d9d9; */
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  padding: 1px 0 1px 10px;
+  height: 21px;
+  line-height: 18px;
+  border: 1px solid #BFBFBF;
+  color: #585858;
+  font-family: "Nanum Gothic";
+}
+
+.bul01 {
+  display: block;
+  padding-left: 8px;
+  background: url(/r63/images/ko/common/bl_tab_dot.gif) no-repeat left center;
+}
+
+.total_reservation_info ul {
+  float: left;
+  padding: 20px 38px;
+  background: #f7f3f0;
+  border-right: 1px solid #d9d9d9;
+}
+
+.total_reservation_info ul li {
+  float: left;
+  padding-right: 45px;
+}
+
+.total_reservation_info ul li input {
+  margin-right: 8px;
+}
+
+.total_reservation_info p {
+  float: left;
+  width: 445px;
+  *width: 434px;
+  padding: 20px 0 0 40px;
+  font-size: 16px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.total_reservation_info p .price {
+  top: 20px;
+  right: 40px;
+  font-size: 18px;
+  color: #560a0c;
+  text-align: right;
+}
+
+.total_reservation_info p .price span {
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+.total_reservation_info {
+  display: flex;
+  border: 1px solid #3c3533;
+  border-bottom: 1px solid;
+}
+
+.resv_pay{
+  display: flex;
+  justify-content: end;
+}

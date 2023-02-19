@@ -1,33 +1,30 @@
-.resv_menu{
-  padding-top: 100px;
-  align-items: center;
+.hours-wrap ,.menu_select{
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 40px;
+  display: block;
 
+}
+
+.hours-container{
   display: flex;
   justify-content: center;
 }
 
-.hours-wrap ,.menu_select{
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  padding: 30px 30px;
-  margin-bottom: 40px;
-  display: table;
-  width: 100%;
-
-  display: inline-block;;
-  text-align: center;
+.menu_select, .hours-wrap{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-.menu_select{
-  margin-top: 40px;
-}
-.hours-wrap ,.box {
-  display: table-cell;
+.hours-wrap{
   font-size: 16px;
+  max-width: 600px;
+  padding: 30px;
 }
 
-.hours-wrap, .box select{
-  width: calc(100% - 100);
+.box {
+  margin-left: 30px;
 }
 
 .hours-wrap ,select {
@@ -35,6 +32,13 @@
   color: #333;
 }
 
+.section > .tit {
+  color: #000;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 40px;
+}
 .menu_choice_list li.re_menu_sel {
   position: relative;
   float: left;
