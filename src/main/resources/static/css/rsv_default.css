@@ -1,4 +1,4 @@
-table, tr, td, th
+table, tr, td
 {
   border-collapse: collapse;
   text-align:start ;
@@ -28,7 +28,7 @@ body {
   height: 100%;
 }
 
-button, input, select, textarea {
+button, input, select, textarea, label {
   margin: 0;
   font-size: 100%;
   vertical-align: middle;
@@ -49,5 +49,5 @@ caption, hr, legend {
 }
 
 caption, th {
-  text-align: left;
+  vertical-align: middle;  
 }

@@ -12,11 +12,17 @@
   background-color: #183a1d;
 }
 
+.brand-logo {
+  color: aliceblue;
+  font-size: 200%;
+}
+
 .container{
-  margin: 30px;
-  justify-content: center;
-  
+  margin: auto;
+  margin-top: 40px;
   display:table;
+  align-items: center;
+  
   table-layout:fixed;
   width: 1200px;
   height: auto;
@@ -30,11 +36,6 @@
   border: 1px solid black;
    -------------------------------> 예약자 인원수, 잠시 중단
 } */
-
-.brand-logo {
-  color: aliceblue;
-  font-size: 200%;
-}
 
 .resv_title{
   padding-bottom: 30px;

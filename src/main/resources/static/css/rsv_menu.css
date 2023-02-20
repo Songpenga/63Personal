@@ -1,0 +1,16 @@
+
+.menu_choice_list{
+  position: relative;
+  margin: auto;
+
+  font-weight: 700;
+
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+}
+
+
+.menu_choice_list .price_info .price {
+  color: #000000;
+  font-weight: 200;
+}
