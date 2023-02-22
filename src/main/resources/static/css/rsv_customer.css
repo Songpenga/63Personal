@@ -1,9 +1,54 @@
+/* 예약시간 table */
+.reservation_chk_box {
+  margin-bottom: 20px;
+}
+
+.tbl_st01 {
+  border-bottom: 1px solid #d9d9d9;
+  width: 80%;
+
+  margin: auto;
+}
+
+.tbl_st01, td.tit_top {
+  padding-left: 20px;
+  background: #f7f3f0;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.tbl_st01 td {
+  padding: 17px 0;
+  text-align: center;
+}
+
+.course_list {
+  margin-bottom: 10px;
+}
+
+.tbl_st01, .total_price {
+  padding-right: 40px;
+  background-color: #ffffff;
+  border-right: 0 none;
+  border-bottom: 0 none;
+  align-items: center;
+}
+
+.total_price{
+  border: 1px solid black;
+  text-align: center;
+}
+.check01{
+  background-color: white;
+}
 /* 상세정보입력 */
 
 .re_content {
   position: relative;
   margin: 0 0 30px 0;
-  margin: auto;
+
+  display: flex;
+  justify-content: center;
 }
 
 .re_content02 {
@@ -93,12 +138,6 @@ input[type="text"]{
 
 .price{
   display: flex;
-}
-
-.la_check{
-  margin-right: 8px;
-  margin: 0;
-  font-size: 100%; 
 }
 
 .total_reservation_info li{

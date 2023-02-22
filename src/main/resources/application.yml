@@ -7,8 +7,18 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url: jdbc:mysql://localhost:3306/library
+  #    username: root
+  #    password: 1q2w3e4r
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://databasepeng.cxkzclvqze2g.ap-northeast-2.rds.amazonaws.com:3306/63building
-    username: root
+    url: jdbc:mysql://databasepeng.cxkzclvqze2g.ap-northeast-2.rds.amazonaws.com:3306/restaurant
+    username: admin
     password: 1q2w3e4r
+
+mybatis:
+  mapper-locations:
+    - /mappers/*.xml
