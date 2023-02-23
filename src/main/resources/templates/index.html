@@ -174,12 +174,12 @@
       <div class="resv_menu">
         <div class="menu_select">
           <input
-            type="checkbox"
+            type="radio"
             id="input_add_product0"
             name="ckbCheck"
-            value="130000/0"
+            value="1000"
             title="주중 저녁 (대인) 선택"
-            onclick="funcAddGoodsChecked(this,'0');"
+            onclick="funcAddMenuChecked();"
           />
 
           <label class="la_check" for="input_add_product0">주중 저녁</label>
@@ -219,12 +219,12 @@
 
         <div class="menu_select">
           <input
-            type="checkbox"
+            type="radio"
             id="input_add_product0"
             name="ckbCheck"
-            value="130000/0"
+            value="2000"
             title="주중 저녁 (대인) 선택"
-            onclick="funcAddGoodsChecked(this,'0');"
+            onclick="funcAddMenuChecked();"
           />
 
           <label class="la_check" for="input_add_product0">주중 저녁</label>
@@ -264,12 +264,12 @@
 
         <div class="menu_select">
           <input
-            type="checkbox"
+            type="radio"
             id="input_add_product0"
             name="ckbCheck"
-            value="130000/0"
+            value="3000"
             title="주중 저녁 (대인) 선택"
-            onclick="funcAddGoodsChecked(this,'0');"
+            onclick="funcAddMenuChecked();"
           />
 
           <label class="la_check" for="input_add_product0">주중 저녁</label>
@@ -309,12 +309,12 @@
 
         <div class="menu_select">
           <input
-            type="checkbox"
+            type="radio"
             id="input_add_product0"
             name="ckbCheck"
-            value="130000/0"
+            value="4000"
             title="주중 저녁 (대인) 선택"
-            onclick="funcAddGoodsChecked(this,'0');"
+            onclick="funcAddMenuChecked();"
           />
 
           <label class="la_check" for="input_add_product0">주중 저녁</label>
@@ -376,19 +376,7 @@
 
               <td class="tit_top">인원수</td>
               <td class="check01">3</td>
-            </tr>
-            <tr style="display: none" id="selected_add_goods"></tr>
-            <tr>
-              <td colspan="4" class="total_price">
-                <span class="money">주문금액</span>
-                <strong class="total_price_num">
-                  <span class="price">0</span>원
-                  <span class="vat"
-                    >(<span class="cnt">0</span>인 / VAT포함)</span
-                  ></strong
-                >
-              </td>
-            </tr>
+            </tr>            
           </tbody>
         </table>
       </div>
@@ -587,4 +575,5 @@
   </body>
   <script src="/static/js/App.js"></script>
   <script src="/static/js/Calendal.js"></script>
+  <script src="/static/js/customer_select.js"></script>
 </html>
