@@ -29,12 +29,19 @@
       <h1 class="resv_title">예약하기</h1>
       <div class="resv_sub_title">
         <h3 class="resv_sub_title_str">예약 일시 선택</h3>
-        <div class="cal_toolbar">
+        <!-- <div class="cal_toolbar">
           <button class="prebBtn"><</button>
           <h1>2023.2</h1>
           <button class="nextBtn">></button>
         </div>
-      </div>
+      </div> -->
+      <div class="date-month">
+        <span id="month-this">2022.05</span>
+        <div class="button_wrap">
+            <button type="button" id="month-prev" class="month-move" data-ym="2022-04-01"> < </button>
+            <button type="button" id="month-next" class="month-move" data-ym="2022-06-01"> > </button>
+        </div>
+    </div>
 
       <div class="cal_resv">
         <div class="cal-left">
@@ -45,16 +52,7 @@
             height="400"
             border="1"
           >
-            <thead>
-              <tr>
-                <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
-                <td colspan="5">
-                    <span id="calYear"></span>년
-                    <span id="calMonth"></span>월
-                </td>
-                <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
-            </tr>
-            
+            <thead>           
               <tr>
                 <th class="sun">일</th>
                 <th>월</th>
@@ -67,40 +65,49 @@
             </thead>
             <tbody id="tbl-month" align="top">
               <tr>
-                <td class="sun">1</td>
-                <td class="">2</td>
-                <td class="">3</td>
-                <td class="">4</td>
-                <td class="">5</td>
-                <td class="">6</td>
-                <td class="">7</td>
+                <td class="sun"><a>1</a></td>
+                <td class=""><a>2</a></td>
+                <td class=""><a>3</a></td>
+                <td class=""><a>4</a></td>
+                <td class="today"><a>5</a></td>
+                <td class=""><a>6</a></td>
+                <td class="sat"><a>7</a></td>
               </tr>
               <tr>
                 <td class="sun">8</td>
-                <td class="">9</td>
-                <td class="">10</td>
-                <td class="">11</td>
-                <td class="">12</td>
-                <td class="">13</td>
-                <td class="">14</td>
+                <td class=""><a>9</a></td>
+                <td class=""><a>10</a></td>
+                <td class=""><a>11</a></td>
+                <td class=""><a>12</a></td>
+                <td class=""><a>13</a></td>
+                <td class=""><a>14</a></td>
               </tr>
               <tr>
-                <td class="sun">15</td>
-                <td class="">16</td>
-                <td class="">17</td>
-                <td class="">18</td>
-                <td class="">19</td>
-                <td class="">20</td>
-                <td class="">21</td>
+                <td class="sun"><a>15</a></td>
+                <td class=""><a>16</a></td>
+                <td class=""><a>17</a></td>
+                <td class=""><a>18</a></td>
+                <td class=""><a>19</a></td>
+                <td class=""><a>20</a></td>
+                <td class=""><a>21</a></td>
               </tr>
               <tr>
-                <td class="sun">22</td>
-                <td class="">23</td>
-                <td class="">24</td>
-                <td class="">25</td>
-                <td class="">26</td>
-                <td class="">27</td>
-                <td class="">28</td>
+                <td class="sun"><a>22</a></td>
+                <td class=""><a>24</a></td>
+                <td class=""><a>24</a></td>
+                <td class=""><a>25</a></td>
+                <td class=""><a>26</a></td>
+                <td class=""><a>27</a></td>
+                <td class=""><a>28</a></td>
+              </tr>
+              <tr>
+                <td class="sun"><a>29</a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
               </tr>
             </tbody>
           </table>
@@ -579,4 +586,5 @@
     </div>
   </body>
   <script src="/static/js/App.js"></script>
+  <script src="/static/js/Calendal.js"></script>
 </html>

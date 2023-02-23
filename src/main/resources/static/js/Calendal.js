@@ -59,3 +59,82 @@ function fullDays(date) {
 
     return days;
 }
+
+function drawMonth(date) {
+    $('#month-this').text(date.substring(0, 7).replace('-', '.'));
+    $('#month-prev').data('ym', prevMonth(date));
+    $('#month-next').data('ym', nextMonth(date));
+
+    $('#tbl-month').empty();
+
+    var td = '<td class="__REST__ __TODAY__"><a __HREF__>__DATE__</a></td>';
+    var href = '/depart/schedule?date=' + date.substring(0, 8);
+    var hasEvent;
+    var tdClass;
+    var week = null;
+    var days = fullDays(date);
+
+}
+
+
+function drawMonth(date) {
+    $('#month-this').text(date.substring(0, 7).replace('-', '.'));
+    $('#month-prev').data('ym', prevMonth(date));
+    $('#month-next').data('ym', nextMonth(date));
+
+    $('#tbl-month').empty();
+
+    var td = '<td class="__REST__ __TODAY__"><a __HREF__>__DATE__</a></td>';
+    var href = '/depart/schedule?date=' + date.substring(0, 8);
+    var hasEvent;
+    var tdClass;
+    var week = null;
+    var days = fullDays(date);
+    for (var i = 0, length = days.length; i < length; i += 7) {
+        // 전체 셀을 주단위로 잘라서 사용
+        week = days.slice(i, i + 7);
+        
+        var $tr = $('<tr></tr>');
+        week.forEach(function (obj, index) {
+            
+            hasEvent = (index === 3);
+            tdClass = (index === 0)? 'sun': '';
+            tdClass = (index === 6)? 'sat': tdClass;
+
+            $tr.append(td.replace('__REST__', tdClass)
+                        .replace('__TODAY__', (obj['today'])? 'today': '')                       
+                        .replace('__DATE__', obj['date']));
+        });
+        $('#tbl-month').append($tr);
+    }
+}
+
+
+
+$(function () {
+    var date = (new Date()).toISOString().substring(0, 10);
+    drawMonth(date);
+
+    $('.month-move').on('click', function (e) {
+        e.preventDefault();
+
+        drawMonth($(this).data('ym'));
+    });
+});
+
+/* 달력 클릭 EVENT*/ 
+$("#resvMon").on("click", "td", function () {
+    var today = new Date();
+    var clickedYear = today.getFullYear();
+    var clickedMonth = ( 1 + today.getMonth() );      
+    var td = $(this);
+                    
+    console.log("클릭한 td year :" + clickedYear);
+    console.log("클릭한 td month :" + clickedMonth);
+    console.log("클릭한 td 값 :" + td.text());
+
+    alert("클릭");
+
+ });
+
+ 
