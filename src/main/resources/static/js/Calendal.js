@@ -122,7 +122,9 @@ $(function () {
     });
 });
 
-/* 달력 클릭 EVENT*/ 
+
+/* ============= 달력 클릭 EVENT  ============= */ 
+
 $("#resvMon").on("click", "td", function () {
     var today = new Date();
     var clickedYear = today.getFullYear();
@@ -135,6 +137,8 @@ $("#resvMon").on("click", "td", function () {
 
     alert("클릭");
 
+    $("#check01").html(clickedYear + "년" + clickedMonth + "월" + td.text() + "일");
+    
  });
 
  

@@ -14,6 +14,10 @@
       src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
     ></script>
 
+    <link rel="stylesheet"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/static/css/rsv_default.css" />
     <link rel="stylesheet" href="/static/css/rsv_menu.css" />
     <link rel="stylesheet" href="/static/css/rsv_customer.css" />
@@ -27,21 +31,46 @@
 
     <div class="container" style="overflow-y: scroll">
       <h1 class="resv_title">예약하기</h1>
+
       <div class="resv_sub_title">
-        <h3 class="resv_sub_title_str">예약 일시 선택</h3>
-        <!-- <div class="cal_toolbar">
-          <button class="prebBtn"><</button>
-          <h1>2023.2</h1>
-          <button class="nextBtn">></button>
+
+      <div class="per_section">
+        <strong class="tit">
+          STEP1. 예약인원 선택
+        </strong>
+        <div class="customer-container outline">
+          <div class="customer-container">
+            <h3 class="rsv-count"> 대인</h3>
+            <button class="check00 per_minus" onclick='countRsvAdult("minus")'><i class="fa-solid fa-minus"></i></button>          
+            <span id="count01" class="num">0</span>       
+            <button class="check00 per_plus" onclick='countRsvAdult("plus")'><i class="fa-solid fa-plus"></i></button>
+          </div>
+          
+          <div class="customer-container outline">
+            <h3 class="rsv-count"> 소인 </h3>
+            <button class="check00 per_minus" onclick='countRsvChild("minus")'><i class="fa-solid fa-minus"></i></button>
+            <span id="count02" class="num">0</span>         
+            <button class="check00 per_plus" onclick='countRsvChild("plus")'><i class="fa-solid fa-plus"></i></button>
+          </div>
+<!-- 
+          <div>
+            <button class="btn_brown_st01 per_check">예약 인원 확인</button>
+          </div> -->
         </div>
-      </div> -->
+      </div>
+    
+      <strong class="tit"> STEP2. 예약날짜 선택   </strong>
+      <h3 class="resv_sub_title_str">예약 일시 선택</h3>          
       <div class="date-month">
-        <span id="month-this">2022.05</span>
-        <div class="button_wrap">
-            <button type="button" id="month-prev" class="month-move" data-ym="2022-04-01"> < </button>
-            <button type="button" id="month-next" class="month-move" data-ym="2022-06-01"> > </button>
-        </div>
-    </div>
+          <div class="cal_toolbar">
+            <div class="button_wrap">
+                <button type="button" id="month-prev" class="month-move prebBtn" data-ym="2022-04-01"> < </button>
+                <span id="month-this">2022.05</span>
+                <button type="button" id="month-next" class="month-move nextBtn" data-ym="2022-06-01"> > </button>
+            </div>
+          </div>
+      </div>
+      
 
       <div class="cal_resv">
         <div class="cal-left">
@@ -175,14 +204,14 @@
         <div class="menu_select">
           <input
             type="radio"
-            id="input_add_product0"
+            id="주중 점심 A"
             name="ckbCheck"
             value="1000"
-            title="주중 저녁 (대인) 선택"
+            title="주중 점심 A"
             onclick="funcAddMenuChecked();"
           />
 
-          <label class="la_check" for="input_add_product0">주중 저녁</label>
+          <label class="la_check" for="input_add_product0">주중 점심 A</label>
           <span class="img">
             <img
               width="180"
@@ -220,14 +249,14 @@
         <div class="menu_select">
           <input
             type="radio"
-            id="input_add_product0"
+            id="주중 점심 B"
             name="ckbCheck"
             value="2000"
-            title="주중 저녁 (대인) 선택"
+            title="주중 점심 B"
             onclick="funcAddMenuChecked();"
           />
 
-          <label class="la_check" for="input_add_product0">주중 저녁</label>
+          <label class="la_check" for="input_add_product0">주중 점심 B</label>
           <span class="img">
             <img
               width="180"
@@ -265,14 +294,14 @@
         <div class="menu_select">
           <input
             type="radio"
-            id="input_add_product0"
+            id="주중 저녁 A"
             name="ckbCheck"
             value="3000"
-            title="주중 저녁 (대인) 선택"
+            title="주중 저녁 A"
             onclick="funcAddMenuChecked();"
           />
 
-          <label class="la_check" for="input_add_product0">주중 저녁</label>
+          <label class="la_check" for="input_add_product0">주중 저녁 A</label>
           <span class="img">
             <img
               width="180"
@@ -310,14 +339,14 @@
         <div class="menu_select">
           <input
             type="radio"
-            id="input_add_product0"
+            id="주중 저녁 B"
             name="ckbCheck"
             value="4000"
-            title="주중 저녁 (대인) 선택"
+            title="주중 저녁 B"
             onclick="funcAddMenuChecked();"
           />
 
-          <label class="la_check" for="input_add_product0">주중 저녁</label>
+          <label class="la_check" for="input_add_product0">주중 저녁 B</label>
           <span class="img">
             <img
               width="180"
@@ -354,7 +383,7 @@
       </div>
       <!-- 예약시간 확인 -->
       <div class="reservation_chk_box">
-        <table class="tbl_st01">
+        <table class="tbl_st01" id="tbl_st">
           <colgroup>
             <col width="20%" />
             <col width="20%" />
@@ -363,19 +392,19 @@
           </colgroup>
           <tbody>
             <tr>
-              <td class="tit_top">예약일</td>
-              <td class="check01">2023년 02월 21일 (화)</td>
+              <td class="tit_top">예약날짜</td>
+              <td class="check01" id="check01">2023년 02월 21일 (화)</td>
 
-              <td class="tit_top">이용날짜</td>
-              <td class="check01">2023년 02월 21일 (화)</td>
+              <td class="tit_top">이용시간</td>
+              <td class="check02">2023년 02월 21일 (화)</td>
             </tr>
 
             <tr>
-              <td class="tit_top">이용시간</td>
-              <td class="check01">18:00 ~</td>
-
               <td class="tit_top">인원수</td>
-              <td class="check01">3</td>
+              <td class="check03" id="check03">0</td>
+
+              <td class="tit_top">선택코스</td>
+              <td class="check04" id="check04">3</td>
             </tr>            
           </tbody>
         </table>
@@ -487,7 +516,7 @@
                   onkeyup="setFilter(this);"
                   onkeypress="setFilter(this);"
                 />
-                @
+                
                 <input
                   type="text"
                   name="email_txt"
@@ -556,7 +585,7 @@
           </li>
         </ul>
         <p>
-          총 결제 금액<span class="price"
+          총 결제 금액<span class="price" id="price"
             ><strong>0원</strong><span class="vat">(0인 / VAT포함)</span></span
           >
         </p>
