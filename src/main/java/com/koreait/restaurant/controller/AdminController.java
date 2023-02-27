@@ -1,30 +1,23 @@
 package com.koreait.restaurant.controller;
 
-import com.koreait.restaurant.Dto.AdminDto;
 import com.koreait.restaurant.service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping()
 public class AdminController {
 
+    @Autowired
     private AdminService adminService;
 
-    @GetMapping
-    public void getlogintest(){
-        System.out.println("test");
-
+    @GetMapping("/home")
+    public String adminHome() {
+        return "admin/admin_home";
     }
 
-    @PostMapping("/admin/login")
-    public String login(AdminDto adminDto, HttpSession httpSession) throws Exception{
-//        adminDto = adminService.getAdminService(adminDto);
-        return "resv";
+    @GetMapping("/home/Login")
+    public String adminLogin() {
+        return "admin/admin_login";
     }
-
 }

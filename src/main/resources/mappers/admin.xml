@@ -5,6 +5,10 @@
 
 <mapper namespace="com.koreait.restaurant.repository.AdminRepository">
     <select id="getAdmin" resultType="com.koreait.restaurant.Dto.AdminDto">
-            select * from admin_login where id= #{id} and pwd= #{pwd}
+        select
+                *
+        from
+            admin_login
+        where id= #{id} and pwd= #{pwd}
     </select>
 </mapper>
