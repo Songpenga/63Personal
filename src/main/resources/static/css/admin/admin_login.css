@@ -1,0 +1,90 @@
+#container {
+    margin: 0px auto;
+    width: 1400px;
+}
+
+.main-container {
+    padding-left: 480px;
+    padding-top: 180px;
+}
+
+.login-container {
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+    width: 400px;
+    height: 400px;
+
+    background-size: 400px 400px;
+    background-image: url(/static/images/spring.jfif);
+    /* background-color: rgb(255, 255, 255); */
+
+    border-radius: 2%;
+}
+
+.main-sub {
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.login-group label {
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.login-ID {
+    padding-right: 29px;
+}
+
+.login-PW {
+    padding-right: 15px;
+}
+
+.login-inputs {
+    border: none;
+    background-color: rgb(221, 221, 221);
+    opacity:0.8;
+    height: 40px;
+    font-size: 25px;
+    color: rgb(17, 17, 17);
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.login-error {
+    margin-left: 50px;
+    font-size: 20px;
+    letter-spacing: 2%;
+    text-shadow: 1px 1px 1px red;
+    color: red;
+}
+
+.button-group {    
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 50px;
+    padding-left: 230px;
+
+    width: 20%;
+}
+
+.button-group button {
+    border: none;
+    border-radius: 2px;
+
+    margin-bottom: 10px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.button-group button:hover {
+    background-color: rgb(163, 163, 163);
+    cursor: pointer;
+}
