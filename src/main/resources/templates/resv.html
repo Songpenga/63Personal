@@ -440,6 +440,7 @@
                   type="text"
                   id="cust_nm"
                   name="cust_nm"
+                  class="cust_nm"
                   value=""
                   style="width: 180px"
                   maxlength="10"
@@ -474,6 +475,7 @@
                   type="text"
                   id="mobile2"
                   name="mobile2"
+                  class="mobile2"
                   value=""
                   style="width: 54px"
                   title="예약고객 연락처 가운데자리 입력"
@@ -486,6 +488,7 @@
                   type="text"
                   id="mobile3"
                   name="mobile3"
+                  class="mobile3"
                   value=""
                   style="width: 54px"
                   title="예약고객 연락처 뒷자리 입력"
@@ -508,6 +511,7 @@
                   type="text"
                   id="email_1"
                   name="email_1"
+                  
                   value=""
                   style="width: 118px"
                   title="예약고객 이메일 아이디 입력"
@@ -536,7 +540,6 @@
                   title="예약고객 이메일 도메인 선택"
                   style="width: 138px"
                   onchange="select_mail('email_');"
-                  onclick="logincheck();"
                 >
                   <option value="self">선택하세요</option>
                   <option value="naver.com">naver.com</option>
@@ -565,9 +568,7 @@
                   title="예약고객 남기실 말씀을 입력해 주세요"
                   name="order_msg"
                   onkeyup="setFilter(this); chk_Length(this,'200','남기실 말씀');"
-                  onkeypress="setFilter(this);"
                   maxlength="150"
-                  onclick="logincheck();"
                 ></textarea>
                 <br /><span style="float: right; padding-right: 32px"
                   >(<span id="msglen">0</span>/200byte)</span
@@ -605,4 +606,5 @@
   <script src="/static/js/App.js"></script>
   <script src="/static/js/Calendal.js"></script>
   <script src="/static/js/customer_select.js"></script>
+  <script src="/static/js/resv_register.js"></script>
 </html>

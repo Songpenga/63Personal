@@ -5,5 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface AdminRepository {
-    public AdminDto getAdmin(AdminDto adminDTO);
+    public AdminDto adminLogin(AdminDto adminDTO);
 }

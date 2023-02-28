@@ -20,13 +20,15 @@ public class ResvDto {
 
     private String resvmenu; //예약메뉴
 
-    private int number;
+    private int number; //연락처
 
     private String email;
 
     private int adult;
 
     private int child;
+
+    private String guest;
 
     private int menu;
 }

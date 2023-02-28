@@ -4,6 +4,7 @@ import com.koreait.restaurant.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class AdminController {
@@ -16,8 +17,6 @@ public class AdminController {
         return "admin/admin_home";
     }
 
-    @GetMapping("/home/Login")
-    public String adminLogin() {
-        return "admin/admin_login";
-    }
+//    @PostMapping("/admin/login")
+
 }
