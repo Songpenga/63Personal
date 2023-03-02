@@ -21,6 +21,9 @@
   box-sizing: border-box;
 }
 
+.cal_right{
+  padding-left: 20px;
+}
 .cal_day{
   display: flex;
   width: 512px;

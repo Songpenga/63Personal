@@ -1,3 +1,37 @@
+/* 예약 시간 선택*/
+function selectResvTime(value){
+  
+  var resvTime;
+    switch(value){
+    case 1:
+      resvTime = "11:00~14:00";
+      break;
+    case 2:
+      resvTime = "14:00~17:00";
+      break;
+    case 3:
+      resvTime = "17:00~20:00";
+      break;
+    case 4:
+      resvTime = "20:00~22:00";
+      break;      
+    }
+
+    $('#check02').html(resvTime);
+}
+
+function checkOnlyOne(element) {
+  
+  const checkboxes 
+      = document.getElementsByName("time");
+  
+  checkboxes.forEach((cb) => {
+    cb.checked = false;
+  })
+  
+  element.checked = true;
+}
+
 /* 인원 선택 */
 function countRsvAdult(type){
 
@@ -49,5 +83,17 @@ function funcAddMenuChecked() {
   console.log(listVar);
 
   $('#check04').html(listText);
+
 }
 
+/* 결제 금액 계산 */ 
+
+function funcCheckSum(){
+  var adult_check = document.getElementById("count01").innerText;
+  var child_check = document.getElementById("count02").innerText;
+
+  let adultPayCheck = parseInt(adult_check);
+  let childPayCheck = parseInt(child_check);
+  
+
+}

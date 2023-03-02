@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
-@RequestMapping("/api/admin")
+
+@RequestMapping("/api")
 @RestController
 public class ResvApi {
 

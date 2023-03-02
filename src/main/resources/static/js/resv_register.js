@@ -30,7 +30,7 @@ class resvRegisterApi{
     $.ajax({
       async : false,
       type : "post",
-      URL : "http://localhost:8000/api/admin/resv",
+      URL : "http://localhost:8000/api/resv",
       contentType : "application/json",
       data : JSON.stringify(resvObj),
       dataType : "json",

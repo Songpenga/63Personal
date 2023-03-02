@@ -155,23 +155,48 @@
                   <input
                     type="checkbox"
                     id="time0"
-                    onclick=""
+                    onclick="selectResvTime(1); checkOnlyOne(this)"
                     name="time"
                     value="1"
                   />
-                  <label class="la_check" for="time0">12:00~14:00</label>
+                  <label class="la_check" for="time0">11:00~14:00</label>
                 </td>
               </tr>
               <tr class="first">
                 <td>
                   <input
                     type="checkbox"
-                    id="time2"
-                    onclick=""
+                    id="time1"
+                    onclick="selectResvTime(2); checkOnlyOne(this)"
                     name="time"
                     value="2"
                   />
-                  <label class="la_check" for="time2">15:00~17:00</label>
+                  <label class="la_check" for="time2">14:00~17:00</label>
+                </td>
+              </tr>
+              <tr class="first">
+                <td>
+                  <input
+                    type="checkbox"
+                    id="time3"
+                    onclick="selectResvTime(3); checkOnlyOne(this)"
+                    name="time"
+                    value="3"
+                  />
+                  <label class="la_check" for="time3">17:00~20:00</label>
+                </td>
+              </tr>
+
+              <tr class="first">
+                <td>
+                  <input
+                    type="checkbox"
+                    id="time4"
+                    onclick="selectResvTime(4); checkOnlyOne(this)"
+                    name="time"
+                    value="4"
+                  />
+                  <label class="la_check" for="time4">20:00~22:00</label>
                 </td>
               </tr>
             </tbody>
@@ -208,7 +233,7 @@
             name="ckbCheck"
             value="1000"
             title="주중 점심 A"
-            onclick="funcAddMenuChecked();"
+            onclick="funcAddMenuChecked(); funcCheckSum()"
           />
 
           <label class="la_check" for="input_add_product0">주중 점심 A</label>
@@ -396,7 +421,7 @@
               <td class="check01 register-input" id="check01">2023년 02월 21일 (화)</td>
 
               <td class="tit_top">이용시간</td>
-              <td class="check02 register-input">2023년 02월 21일 (화)</td>
+              <td class="check02 register-input" id="check02"> -- </td>
             </tr>
 
             <tr>
