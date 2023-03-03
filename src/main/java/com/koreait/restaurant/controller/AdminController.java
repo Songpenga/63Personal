@@ -1,25 +1,22 @@
 package com.koreait.restaurant.controller;
 
-import com.koreait.restaurant.service.AdminService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("")
 public class AdminController {
 
-    @Autowired
-    private AdminService adminService;
-
-    @GetMapping("/home")
-    public String adminHome() {
-        return "admin/admin_home";
+    @PostMapping("/admin/access")
+    public String admin(){
+        return "/admin/login_home";
     }
 
-    @GetMapping("/login")
-    public String adminLogin() {
-        return "admin/admin_login";
+    @GetMapping("/accessDenied")
+    public String accessDenied(){
+        return "/admin/admin_login_error";
     }
-
 }

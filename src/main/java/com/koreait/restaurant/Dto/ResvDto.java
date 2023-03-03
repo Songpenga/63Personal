@@ -1,26 +1,23 @@
 package com.koreait.restaurant.Dto;
 //230113
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
-import java.time.LocalDateTime;
 
 @Data
 public class ResvDto {
 
-    //예약번호
-    private int resvId;
-    //예약자이름
-    private String customerName;
+    private int resvId; //예약번호
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
-    private LocalDateTime resvDate; // 예약날짜
+    private String customerName;  //예약자이름
 
-    private int resvTime; //예약시간
+    private String resvDate; // 예약날짜
+
+    private String resvTime; //예약시간
 
     private String resvmenu; //예약메뉴
 
-    private int number; //연락처
+    private String number; //연락처
 
     private String email;
 
@@ -29,6 +26,4 @@ public class ResvDto {
     private int child;
 
     private String guest;
-
-    private int menu;
 }
