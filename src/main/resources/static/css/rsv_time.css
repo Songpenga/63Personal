@@ -30,6 +30,16 @@
   padding: 20px 50px 20px 50px;
 }
 
+.timeSelectCheck{
+  border: 1px solid black;
+  display: flex;
+  align-items: end;
+}
+
+.resvTimeButton{
+  padding: 15px;
+}
+
 #resvMon > thead {
   font-weight: bold;
   height: 50px;

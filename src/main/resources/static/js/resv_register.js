@@ -61,7 +61,7 @@ class resvRegisterService {
   setResvObjValue(){
     const registerInputs = document.querySelectorAll(".register-input"); //예약정보
     const registerInput_nm = document.querySelectorAll(".cust_nm"); //인원수
-    const registerInput_cus = document.querySelectorAll(".num"); // 대인.소인
+    ment.querySelectorAll(".num"); // 대인.소인
 
     var mobile1 =  $('option[name="mobile1"]:checked').val();
     var mobile2 = document.querySelectorAll(".mobile2").value;
@@ -84,23 +84,6 @@ class resvRegisterService {
     resvObj.guest = registerInputs[2].value; //인원 총합
     resvObj.resvmenu = registerInputs[3].value;
 
-  }
-
-  setErrors(errors){//필수작성란
-    const errorMessages = document.querySelectorAll(".error-message");
-    this.clearErrors();
-
-    Object.keys(errors).forEach(key=>{
-      if(key == "customerName"){
-        errorMessages[0].innerHTML= errors[key];
-      }else if(key=="resvDate"){
-        errorMessages[1].innerHTML= errors[key];
-      }else if(key=="number"){
-        errorMessages[3].innerHTML= errors[key];
-      }else if(key=="email"){
-        errorMessages[4].innerHTML= errors[key];
-      }
-    })
   }
 
   clearErrors(){

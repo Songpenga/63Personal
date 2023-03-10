@@ -1,12 +1,14 @@
-package com.koreait.restaurant.Dto;
+package com.koreait.restaurant.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.List;
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
-//
-public class SelectMenuDto {
+public class SelectMenuEntity {
+
     private int menuCode;
     private String menuName;
     private String day;

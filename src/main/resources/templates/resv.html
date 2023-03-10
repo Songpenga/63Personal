@@ -149,263 +149,74 @@
                 <th scope="col">이용시간</th>
               </tr>
             </thead>
-            <tbody id="resv_limit_seat">
-              <tr class="first">
-                <td>
-                  <input
-                    type="checkbox"
-                    id="time0"
-                    onclick="selectResvTime(1); checkOnlyOne(this)"
-                    name="time"
-                    value="1"
-                  />
-                  <label class="la_check" for="time0">11:00~14:00</label>
-                </td>
-              </tr>
-              <tr class="first">
-                <td>
-                  <input
-                    type="checkbox"
-                    id="time1"
-                    onclick="selectResvTime(2); checkOnlyOne(this)"
-                    name="time"
-                    value="2"
-                  />
-                  <label class="la_check" for="time2">14:00~17:00</label>
-                </td>
-              </tr>
-              <tr class="first">
-                <td>
-                  <input
-                    type="checkbox"
-                    id="time3"
-                    onclick="selectResvTime(3); checkOnlyOne(this)"
-                    name="time"
-                    value="3"
-                  />
-                  <label class="la_check" for="time3">17:00~20:00</label>
-                </td>
-              </tr>
-
-              <tr class="first">
-                <td>
-                  <input
-                    type="checkbox"
-                    id="time4"
-                    onclick="selectResvTime(4); checkOnlyOne(this)"
-                    name="time"
-                    value="4"
-                  />
-                  <label class="la_check" for="time4">20:00~22:00</label>
-                </td>
-              </tr>
-            </tbody>
+            <div class="categoriy-list">
+              <tbody id="resv_limit_seat">
+                <tr class="first">
+                  <td>
+                    <input
+                      type="radio"
+                      class="time_check"
+                      id="time0"
+                      onclick="selectResvTime(1); checkOnlyOne(this)"
+                      name="time"
+                      value="점심"
+                    />
+                    <label for="time0">11:00~14:00</label>
+                  </td>
+                </tr>
+                <tr class="first">
+                  <td>
+                    <input
+                      type="radio"
+                      class="time_check"
+                      id="time1"
+                      onclick="selectResvTime(2); checkOnlyOne(this)"
+                      name="time"
+                      value="점심"
+                    />
+                    <label for="time2">14:00~17:00</label>
+                  </td>
+                </tr>
+                <tr class="first">
+                  <td>
+                    <input
+                      type="radio"
+                      class="time_check"
+                      id="time3"
+                      onclick="selectResvTime(3); checkOnlyOne(this)"
+                      name="time"
+                      value="저녁"
+                    />
+                    <label for="time3">17:00~20:00</label>
+                  </td>
+                </tr>
+                <tr class="first">
+                  <td>
+                    <input
+                      type="radio"
+                      class="time_check"
+                      id="time4"
+                      onclick="selectResvTime(4); checkOnlyOne(this)"
+                      name="time"
+                      value="저녁"
+                    />
+                    <label class="time_check" for="time4">20:00~22:00</label>
+                  </td>
+                </tr>
+              </tbody>
+            </div>
           </table>
+          <div class="timeSelectCheck">
+            <button type = "button" class="resvTimeButton">예약 시간 선택</button>
+          </div>
         </div>
       </div>
-      <!-- 
-      <div class="hours-container">
-        <div class="hours-wrap">
-          <div class="box">
-            이용시간 선택
-            <select id="selectBizHoursNo" name="selectBizHoursNo">
-              <option value="1||1">중식-평일 12:00 ~ 15:00</option>
-              <option value="46||1" selected="selected">석식-평일 18:00 ~ 21:00</option>
-            </select>
-          </div>
-          <div class="box">
-            방문시간 선택
-            <select id="visitResvDateStr" name="visitResvDateStr">
-              <option value="202302211800">18:00</option>
-              <option value="202302211830">18:30</option><option value="202302211900">19:00</option>
-              <option value="202302211930">19:30</option></select>
-          </div>
-        </div>
-      </div> -->
 
       <h3 class="re_st01 color_point">메뉴선택</h3>
 
-      <div class="resv_menu">
-        <div class="menu_select">
-          <input
-            type="radio"
-            id="주중 점심 A"
-            name="ckbCheck"
-            value="1000"
-            title="주중 점심 A"
-            onclick="funcAddMenuChecked(); funcCheckSum()"
-          />
-
-          <label class="la_check" for="input_add_product0">주중 점심 A</label>
-          <span class="img">
-            <img
-              width="180"
-              height="126"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
-              alt="배너"
-            />
-          </span>
-          <div class="bx_price">
-            <div class="price_info">
-              <p class="price">
-                <span>대인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-
-              <p class="price">
-                <span>소인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-            </div>
-          </div>
-
-          <a href="#" class="btn_more href_link"></a>
-          <div
-            id="layer_type02"
-            class="menu_sel clfix rv_layer_type02 lay_i1"
-            style="display: none"
-          >
-            <div class="width:826px;height:264px;background-color:#FFFFFF">
-              <span style="width: 377px; height: 264px; float: left"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu_select">
-          <input
-            type="radio"
-            id="주중 점심 B"
-            name="ckbCheck"
-            value="2000"
-            title="주중 점심 B"
-            onclick="funcAddMenuChecked();"
-          />
-
-          <label class="la_check" for="input_add_product0">주중 점심 B</label>
-          <span class="img">
-            <img
-              width="180"
-              height="126"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
-              alt="배너"
-            />
-          </span>
-          <div class="bx_price">
-            <div class="price_info">
-              <p class="price">
-                <span>대인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-
-              <p class="price">
-                <span>소인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-            </div>
-          </div>
-
-          <a href="#" class="btn_more href_link"></a>
-          <div
-            id="layer_type02"
-            class="menu_sel clfix rv_layer_type02 lay_i1"
-            style="display: none"
-          >
-            <div class="width:826px;height:264px;background-color:#FFFFFF">
-              <span style="width: 377px; height: 264px; float: left"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu_select">
-          <input
-            type="radio"
-            id="주중 저녁 A"
-            name="ckbCheck"
-            value="3000"
-            title="주중 저녁 A"
-            onclick="funcAddMenuChecked();"
-          />
-
-          <label class="la_check" for="input_add_product0">주중 저녁 A</label>
-          <span class="img">
-            <img
-              width="180"
-              height="126"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
-              alt="배너"
-            />
-          </span>
-          <div class="bx_price">
-            <div class="price_info">
-              <p class="price">
-                <span>대인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-
-              <p class="price">
-                <span>소인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-            </div>
-          </div>
-
-          <a href="#" class="btn_more href_link"></a>
-          <div
-            id="layer_type02"
-            class="menu_sel clfix rv_layer_type02 lay_i1"
-            style="display: none"
-          >
-            <div class="width:826px;height:264px;background-color:#FFFFFF">
-              <span style="width: 377px; height: 264px; float: left"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="menu_select">
-          <input
-            type="radio"
-            id="주중 저녁 B"
-            name="ckbCheck"
-            value="4000"
-            title="주중 저녁 B"
-            onclick="funcAddMenuChecked();"
-          />
-
-          <label class="la_check" for="input_add_product0">주중 저녁 B</label>
-          <span class="img">
-            <img
-              width="180"
-              height="126"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
-              alt="배너"
-            />
-          </span>
-          <div class="bx_price">
-            <div class="price_info">
-              <p class="price">
-                <span>대인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-
-              <p class="price">
-                <span>소인</span>
-                <span class="mem_num">117,000원</span>
-              </p>
-            </div>
-          </div>
-
-          <a href="#" class="btn_more href_link"></a>
-          <div
-            id="layer_type02"
-            class="menu_sel clfix rv_layer_type02 lay_i1"
-            style="display: none"
-          >
-            <div class="width:826px;height:264px;background-color:#FFFFFF">
-              <span style="width: 377px; height: 264px; float: left"></span>
-            </div>
-          </div>
-        </div>
+      <div class="resv_menu_test">
       </div>
+
       <!-- 예약시간 확인 -->
       <div class="reservation_chk_box">
         <table class="tbl_st01" id="tbl_st">
@@ -429,7 +240,8 @@
               <td class="check03 register-input" id="check03">0</td>
 
               <td class="tit_top">선택코스</td>
-              <td class="check04 register-input" id="check04">3</td>
+              <td class="check04 register-input" id="check04">
+                <label for=""></label>--</td>
             </tr>            
           </tbody>
         </table>
@@ -465,7 +277,7 @@
                   type="text"
                   id="cust_nm"
                   name="cust_nm"
-                  class="cust_nm"
+                  class="product-input"
                   value=""
                   style="width: 180px"
                   maxlength="10"
@@ -618,13 +430,13 @@
       </div>
 
       <div class="resv_pay">
-        <a
+        <!-- <a
           href="#"
           class="btn_brown_st01 btn_re_pay"
           onclick="funcCheckRSV('buy');return false;"
           >결제하기</a
-        >
-        <button onclick="requestPay()">결제하기</button>
+        > -->
+        <button type="button" class="payment-button">결제하기</button>
       </div>
     </div>
   </body>
@@ -632,4 +444,5 @@
   <script src="/static/js/Calendal.js"></script>
   <script src="/static/js/customer_select.js"></script>
   <script src="/static/js/resv_register.js"></script>
+  <script src="/static/js/SelectMenu.js"></script>
 </html>

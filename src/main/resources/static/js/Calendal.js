@@ -1,3 +1,8 @@
+const menuObj = {
+    day: null,
+    meals: null
+}
+
 function prevMonth(date) {
     var target = new Date(date);
     target.setDate(1);
@@ -126,16 +131,22 @@ $(function () {
 /* ============= 달력 클릭 EVENT  ============= */ 
 
 $("#resvMon").on("click", "td", function () {
+    var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+
     var today = new Date();
     var clickedYear = today.getFullYear();
     var clickedMonth = ( 1 + today.getMonth() );      
     var td = $(this);
-                    
+
+    var date = new Date(Number(clickedYear), Number(clickedMonth)-1, Number(td.text()));
+    var today_week = week[date.getDay()];
+    
     console.log("클릭한 td year :" + clickedYear);
     console.log("클릭한 td month :" + clickedMonth);
     console.log("클릭한 td 값 :" + td.text());
-
-    alert("클릭");
+    console.log(date, today_week);
+    const weekList = ["토요일", "일요일"];
+    menuObj.day = weekList.includes(today_week) ? "주말" : "평일";
 
     $("#check01").html(clickedYear + "년" + clickedMonth + "월" + td.text() + "일");
     

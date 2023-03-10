@@ -1,15 +1,5 @@
 window.onload = () =>{
-
-}
-
-const MenuObj = {
-    menuID: "",
-
-    day: "",
-    meals: "",
-
-    adultPrice: "",
-    childPrice: ""
+    SelectComponent.getInstance().addClickEventResvSelect();
 }
 
 class SearchApi {
@@ -21,55 +11,165 @@ class SearchApi {
         return this.#instance;
     }
 
-    searchBook() {
+    searchMenu() {
         let responseData = null;
 
         $.ajax({
             async: false,
             type: "get",
             url: "http://127.0.0.1:8000/api/search",
-            data: MenuObj,
-            dataType: "json",
+            data: menuObj, //day(평일,주말) && meals(점심,저녁)
+            // date가 없어지니까 성공됨... 왜지..? -> 값을 가져와야하는데 쓸데없이 값을 전달해서
+            dataType: 'json',
             success: response => {
                 responseData = response.data;
             },
             error: error => {
                 console.log(error);
             }
-        })
+        });
 
         return responseData;
     }
 
-    loadSearchBooks() {
-        const responseData = SearchApi.getInstance().searchBook();
-        const contentFlex = document.querySelector(".content-flex");
+    getCategories() {
+      let returnData = null;
 
-        responseData.forEach(data => {
-            contentFlex.innerHTML += `
-                <div class="info-container">
-                    <div class="book-desc">
-                        <div class="img-container">
-                            <img src="http://127.0.0.1:8000/image/book/${data.saveName != null ? data.saveName : "no_img.png"}" class="book-img">
-                        </div>
-                        <div class="like-info"><i class="fa-regular fa-thumbs-up"></i> <span class="like-count">${data.likeCount != null ? data.likeCount : 0}</span></div>
-                    </div>
-                    
-                    <div class="book-info">
-                        <div class="book-code">${data.bookCode}</div>
-                        <h3 class="book-name">${data.bookName}</h2>
-                        <div class="info-text book-author"><b>저자: </b>${data.author}</div>
-                        <div class="info-text book-publisher"><b>출판사: </b>${data.publisher}</div>
-                        <div class="info-text book-publicationdate"><b>출판일: </b>${data.publicationDate}</div>
-                        <div class="info-text book-category"><b>카테고리: </b>${data.category}</div>
-                        <div class="book-buttons">
-                            <button type="button" class="rental-button">대여하기</button>
-                            <button type="button" class="like-button">추천</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        })
+      $.ajax({
+          async: false,
+          type: "get",
+          url: "http://localhost:8000/api/select",
+          dataType: "json",
+          success: response => {
+              console.log(response);
+              returnData = response.data;
+          },
+          error: error => {
+              console.log(error);
+          }
+      });
+
+      return returnData;
+  }
+
+}
+
+class SearchService {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new SearchService();
+        }
+        return this.#instance;
     }
 
+    loadCategories(){
+      const categoryList = document.querySelector(".categoriy-list");
+    }
+
+    loadMenuList() {
+        const responseData = SearchApi.getInstance().searchMenu();
+        const contentFlex = document.querySelector(".resv_menu_test");
+
+        console.log(responseData);
+
+        responseData.forEach(data => {
+            contentFlex.innerHTML = `
+            <div class="menu_select">
+              <input
+                type="radio"
+                id="${data.day}${data.meals}"
+                class="ckbCheck"
+                name="ckbCheck"
+                value="${data.adultPrice}"
+                
+              />
+    
+              <label class="la_check" for="${data.day}${data.meals}">${data.day}${data.meals}</label>
+              <span class="img">
+                <img
+                  width="180"
+                  height="126"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
+                  alt="배너"
+                />
+              </span>
+              <div class="bx_price">
+                <div class="price_info">
+                  <p class="price">
+                    <span>대인</span>
+                    <span class="mem_num">${data.adultPrice}</span>
+                  </p>
+    
+                  <p class="price">
+                    <span>소인</span>
+                    <span class="mem_num">${data.childPrice}</span>
+                  </p>
+                </div>
+              </div>
+    
+              <a href="#" class="btn_more href_link"></a>
+              <div
+                id="layer_type02"
+                class="menu_sel clfix rv_layer_type02 lay_i1"
+                style="display: none"
+              >
+                <div class="width:826px;height:264px;background-color:#FFFFFF">
+                  <span style="width: 377px; height: 264px; float: left"></span>
+                </div>
+              </div>
+            </div>
+            `;
+        })       
+    }
+
+    checkMenuPrice(){
+      const responseData = SearchApi.getInstance().searchMenu();
+      var count_adult = document.getElementById("count01").innerText;
+      var count_child = document.getElementById("count02").innerText;
+      const PriceSum = document.getElementById("")
+
+      console.log(count_adult);
+      console.log(count_child);
+
+      responseData.forEach(data => {
+      
+        var adultCheckPrice = Number(data.adultPrice);
+        var childCheckPrice = Number(data.childPrice);
+
+        var adultPrice = Number(count_adult);
+        var childPrice = Number(count_child);
+
+        var checkSumAdult = adultCheckPrice * adultPrice;
+        var checkSumChild = childCheckPrice * childPrice;
+        
+        console.log(checkSumAdult);
+        console.log(checkSumChild);
+
+
+
+      });
+      
+    }
+
+
+}
+
+class SelectComponent{
+  static #instance = null;
+  static getInstance(){
+    if(this.#instance == null){
+      this.#instance = new SelectComponent();
+    }
+    return this.#instance;
+  }
+
+  addClickEventResvSelect() {
+    const resvTimeButton = document.querySelector(".resvTimeButton");
+
+    resvTimeButton.onclick = () => {
+      SearchService.getInstance().loadMenuList();
+      SearchService.getInstance().checkMenuPrice();
+    }
+  }
 }

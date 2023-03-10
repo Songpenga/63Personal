@@ -2,21 +2,26 @@
 function selectResvTime(value){
   
   var resvTime;
+  var resvTimeRange;
     switch(value){
     case 1:
       resvTime = "11:00~14:00";
+      resvTimeRange = "중식";
       break;
     case 2:
       resvTime = "14:00~17:00";
+      resvTimeRange = "중식";
       break;
     case 3:
       resvTime = "17:00~20:00";
+      resvTimeRange = "석식";
       break;
     case 4:
       resvTime = "20:00~22:00";
+      resvTimeRange = "석식";
       break;      
     }
-
+    menuObj.meals = resvTimeRange;
     $('#check02').html(resvTime);
 }
 
@@ -74,26 +79,5 @@ function countRsvChild(type){
 }
 
 
-
-/* 메뉴 값 선택 */
-function funcAddMenuChecked() {
-  var listVar = $('input[name="ckbCheck"]:checked').val();
-  var listText = $('input[name="ckbCheck"]:checked').prop("id");
-  // var check_04 = document.getElementById("check04");
-  console.log(listVar);
-
-  $('#check04').html(listText);
-
-}
-
 /* 결제 금액 계산 */ 
 
-function funcCheckSum(){
-  var adult_check = document.getElementById("count01").innerText;
-  var child_check = document.getElementById("count02").innerText;
-
-  let adultPayCheck = parseInt(adult_check);
-  let childPayCheck = parseInt(child_check);
-  
-
-}
