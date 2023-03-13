@@ -127,7 +127,7 @@ class SearchService {
       const responseData = SearchApi.getInstance().searchMenu();
       var count_adult = document.getElementById("count01").innerText;
       var count_child = document.getElementById("count02").innerText;
-      const PriceSum = document.getElementById("")
+      //const PriceSum = document.getElementById("price").value;
 
       console.log(count_adult);
       console.log(count_child);
@@ -145,6 +145,8 @@ class SearchService {
         
         console.log(checkSumAdult);
         console.log(checkSumChild);
+        
+        document.getElementById("price").innerText = checkSumAdult + checkSumChild;  
 
 
 

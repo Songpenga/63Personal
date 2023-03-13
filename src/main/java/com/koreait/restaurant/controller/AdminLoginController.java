@@ -1,8 +1,5 @@
 package com.koreait.restaurant.controller;
-
-import com.koreait.restaurant.service.AdminLoginService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,9 +8,6 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RequestMapping(value = "/admin")
 public class AdminLoginController {
-
-    @Autowired
-    AdminLoginService adminLoginService;
 
     @GetMapping("/index")
     public String adminHome() {

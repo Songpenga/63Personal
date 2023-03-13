@@ -12,7 +12,7 @@ const resvObj = {
   adult: "",
   child: "",
   guest: "",
-  resvmenu: "",
+  resvmenu: ""
 }
 
 class resvRegisterApi{
@@ -35,6 +35,7 @@ class resvRegisterApi{
       data : JSON.stringify(resvObj),
       dataType : "json",
       success : response => {
+        console.log(response);
         successFlag = true;
       },
       error : error =>{
@@ -78,8 +79,8 @@ class resvRegisterService {
     resvObj.number = join(mobile1, mobile2, mobile3);
     resvObj.email = join(email_01, email_02);
 
-    resvObj.adult = registerInput_cus[0].value;
-    resvObj.child = registerInput_cus[1].value;
+    // resvObj.adult = registerInput_cus[0].value;
+    // resvObj.child = registerInput_cus[1].value;
 
     resvObj.guest = registerInputs[2].value; //인원 총합
     resvObj.resvmenu = registerInputs[3].value;
@@ -105,14 +106,17 @@ class ComponentEvent {
   }
 
   addClickEventRegisterButton() {
-      const registerButton = document.querySelector(".btn_re_pay");
+      const registerButton = document.querySelector(".payment-button");
 
       registerButton.onclick = () => {
         resvRegisterService.getInstance().setResvObjValue();
           const successFlag = resvRegisterApi.getInstance().registerResv();
           
           if(!successFlag) {
+            console.log(error);
               return;
+          }else{
+            console("예약완료되었습니다!");
           }
       }
 
