@@ -1,6 +1,6 @@
 package com.koreait.restaurant.service;
 
-import com.koreait.restaurant.Dto.SelectMenuDto;
+import com.koreait.restaurant.web.Dto.SelectMenuDto;
 import com.koreait.restaurant.entity.SelectMenuEntity;
 import com.koreait.restaurant.repository.SelectRepository;
 import lombok.RequiredArgsConstructor;

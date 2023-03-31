@@ -1,7 +1,7 @@
 package com.koreait.restaurant.repository;
 
 
-import com.koreait.restaurant.Dto.ResvDto;
+import com.koreait.restaurant.web.dto.ResvDto;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

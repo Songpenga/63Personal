@@ -1,5 +1,5 @@
 package com.koreait.restaurant.repository;
-import com.koreait.restaurant.Dto.SelectMenuDto;
+import com.koreait.restaurant.web.Dto.SelectMenuDto;
 import com.koreait.restaurant.entity.SelectMenuEntity;
 import org.apache.ibatis.annotations.Mapper;
 

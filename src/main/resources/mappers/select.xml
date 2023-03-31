@@ -20,7 +20,7 @@
 <!--    </select>-->
 
     <select id="userSelectMenu"
-            parameterType="com.koreait.restaurant.Dto.SelectMenuDto"
+            parameterType="com.koreait.restaurant.web.Dto.SelectMenuDto"
             resultType="com.koreait.restaurant.entity.SelectMenuEntity">
         select
         code as menuCode,

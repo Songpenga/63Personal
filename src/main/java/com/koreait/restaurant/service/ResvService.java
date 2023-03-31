@@ -1,6 +1,6 @@
 package com.koreait.restaurant.service;
 
-import com.koreait.restaurant.Dto.ResvDto;
+import com.koreait.restaurant.web.dto.ResvDto;
 import com.koreait.restaurant.repository.ResvRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

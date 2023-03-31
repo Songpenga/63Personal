@@ -1,5 +1,6 @@
 package com.koreait.restaurant.config;
-//import org.springframework.beans.factory.annotation.Value;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -14,23 +15,28 @@ import java.nio.charset.StandardCharsets;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
+    @Value("${file.path}")
+    private String filePath;
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedMethods("*");
+        registry.addMapping("/**")
+                .allowedMethods("*")
+                .allowedOrigins("*");
     }
 
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry){
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);
-        registry.addResourceHandler("/templates")
+        registry.addResourceHandler("/image/**")
+                .addResourceLocations("file:///" + filePath)
                 .resourceChain(true)
-                .addResolver(new PathResourceResolver(){
+                .addResolver(new PathResourceResolver() {
                     @Override
-                    protected  Resource getResource(String resourcePath, Resource location) throws IOException {
+                    protected Resource getResource(String resourcePath, Resource location) throws IOException {
                         resourcePath = URLDecoder.decode(resourcePath, StandardCharsets.UTF_8);
                         return super.getResource(resourcePath, location);
                     }
-                 });
+                });
     }
 }

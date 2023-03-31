@@ -1,42 +1,66 @@
-function f_loginCheck(){
-  var userId = $('input[name="adminId"]').val();
-  var pwd = $('input[name="admminPw"]').val();
-    /**
-  * 아래는 localStorage를 활용한 아이디 기억을 사용하기 위함입니다.
-  * 아이디 저장 checkbox가 선택된 상태로 로그인 버튼을 클릭하면 
-  * 다음 login 페이지로 접속할 시 document.ready시점에 localStorage.getItem("saveId")
-  * 값이 '', null, 'N' 중에 없을 시에만 id input란에 값을 넣어주면 됩니다.
-  */
-  // if(saveIdCheck == 'on'){
-  //     localStorage.setItem("saveId", userId);
-  // } else{
-  //     localStorage.setItem("saveId", 'N');    
-  // }
+window.onload = () => {
+    LoginEvent.getInstance().addLoginSubmitOnclickEvent();
+}
 
-  var loginData = {"userId":userId, "pwd":pwd};
+class LoginApi {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new LoginApi();
+        }
+        return this.#instance;
+    }
 
-  $.ajax({
-      type: "POST",
-      url: "localhost:8000/admin/login",
-      contentType : "application/json",
-      data : JSON.stringify(loginData),
-      success : function(result){
-          if(result == 0){
-              alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
-              return false;
-          } else if(result == 9){
-              alert("통신 오류");
-              return false;  
-          } else {
-              // 로그인 성공 시
-              window.location.href = "/admin/access";
-          }
-      },
-      error : function(jqXHR, status, error){
-          alert("알 수 없는 에러 [ " + error + " ]"); 
-      }
-  });
+    login(admin) {
+        $.ajax({
+            async: false,
+            type: "post",
+            url: "/api/account/login",
+            contentType: "application/json",
+            data: JSON.stringify(user),
+            dataType: "json",
+            success: response => {
+                console.log(response);
+                alert("로그인 성공. 관리자 페이지로 이동합니다.");
+                location.replace("/templates/admin/login_home");
+            },
+            error: error => {
+                console.log(error);
+                RegisterService.getInstance().setErrorMessage(error.responseJSON.data);
+            }
+        })
+    }
+}
 
+class LoginEvent {
+    static #instance = null;
+    static getInstance() {
+        if(this.#instance == null) {
+            this.#instance = new LoginEvent();
+        }
+        return this.#instance;
+    }
 
-  
+    addRegisterSubmitOnclickEvent() {
+        const registerSubmit = document.querySelector(".register-submit");
+
+        loginSubmit.onclick = () => {
+            const adminIdValue = document.querySelectorAll(".login-inputs")[0].value;
+            const adminPwValue = document.querySelectorAll(".login-inputs")[1].value;
+
+            const admin = new Admin(adminIdValue, adminPwValue);
+
+            LoginApi.getInstance().login(admin);
+        }
+    }
+}
+
+class admin {
+    adminId = null;
+    adminPw = null;
+
+    constructor(adminId, adminPw) {
+        this.adminId = adminId;
+        this.adminPw = adminPw;
+    }
 }
