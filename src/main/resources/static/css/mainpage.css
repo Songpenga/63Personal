@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .main-course{
     display: flex;
     vertical-align: middle;
@@ -13,6 +27,8 @@
     vertical-align: middle;
     justify-content: center;
     
+    font-family: 'Cafe24Ssurround';
+
 }
 
 
@@ -138,6 +154,15 @@
 }
 
 .button-group .reserve {
+    background-color: black;
+
+    width: 50%;
+
+    font-size: 30px;
+    color: white;
+}
+
+.button-group .reserve-check {
     background-color: black;
 
     width: 50%;

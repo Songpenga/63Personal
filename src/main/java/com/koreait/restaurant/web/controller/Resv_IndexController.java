@@ -1,4 +1,4 @@
-package com.koreait.restaurant.web.api.controller;
+package com.koreait.restaurant.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

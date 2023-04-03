@@ -26,6 +26,7 @@ class ImportApi {
         restApikey: "1388730247832502",
         restApiSecret: "K8XaBCZ49ITVyvFDWlqts5W5rwWcvZFsM7TcQZ17UgWHQ1vWEbc0ro05xUXJUbUBGQyd4xxxk9WuzY4E"
     }
+    
     importPayParams= {
         pg: "kakaopay",
         pay_method: "card",

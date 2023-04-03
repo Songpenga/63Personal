@@ -17,9 +17,9 @@ public class Resv_CheckService {
     private Resv_CheckRepository checkRepository;
 
 
-    public List<DinningMst> searchReserveIdAndNumber(CheckReqDto checkReqDto) {
-        System.out.println(checkRepository.searchReserveIdAndNumber(checkReqDto));
-        return checkRepository.searchReserveIdAndNumber(checkReqDto);
+    public List<DinningMst> getReserveData(CheckReqDto checkReqDto) {
+        System.out.println(checkRepository.getReserveData(checkReqDto));
+        return checkRepository.getReserveData(checkReqDto);
     }
 
     public void removeReserve(int reserveId) {

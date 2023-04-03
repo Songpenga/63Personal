@@ -26,7 +26,7 @@
   </head>
   <body>
     <header class="header-container">
-      <h1 class="brand-logo">HOTSIX63</h1>
+      <h1 class="brand-logo">핫식스</h1>
     </header>
 
     <div class="container" style="overflow-y: scroll">
@@ -282,9 +282,6 @@
                   style="width: 180px"
                   maxlength="10"
                   title="예약고객 이름 입력"
-                  onclick="logincheck();"
-                  onkeyup="setFilter(this);"
-                  onkeypress="setFilter(this);"
                 />
               </td>
               <th width="104" scope="row">
@@ -298,7 +295,6 @@
                   title="예약고객 연락처 앞자리 선택"
                   style="width: 74px"
                   name="mobile1"
-                  onclick="logincheck();"
                 >
                   <option value="010">010</option>
                   <option value="011">011</option>
@@ -317,8 +313,6 @@
                   style="width: 54px"
                   title="예약고객 연락처 가운데자리 입력"
                   maxlength="4"
-                  onkeyup="isNumber(this);"
-                  onclick="logincheck();"
                 />
                 -
                 <input
@@ -330,8 +324,6 @@
                   style="width: 54px"
                   title="예약고객 연락처 뒷자리 입력"
                   maxlength="4"
-                  onkeyup="isNumber(this);"
-                  onclick="logincheck();"
                 />
               </td>
             </tr>
@@ -353,9 +345,6 @@
                   style="width: 118px"
                   title="예약고객 이메일 아이디 입력"
                   maxlength="25"
-                  onclick="logincheck();"
-                  onkeyup="setFilter(this);"
-                  onkeypress="setFilter(this);"
                 />
                 
                 <input
@@ -366,9 +355,6 @@
                   style="width: 109px"
                   title="예약고객 이메일 도메인 직접입력"
                   maxlength="50"
-                  onclick="logincheck();"
-                  onkeyup="setFilter(this);"
-                  onkeypress="setFilter(this);"
                 />
 
                 <select
@@ -404,7 +390,6 @@
                   style="width: 673px; height: 78px"
                   title="예약고객 남기실 말씀을 입력해 주세요"
                   name="order_msg"
-                  onkeyup="setFilter(this); chk_Length(this,'200','남기실 말씀');"
                   maxlength="150"
                 ></textarea>
                 <br /><span style="float: right; padding-right: 32px"
@@ -436,13 +421,13 @@
           onclick="funcCheckRSV('buy');return false;"
           >결제하기</a
         > -->
-        <button type="button" onclick="requestPay()">결제하기</button>
+        <button type="button" id="reserveButton">결제하기</button>
       </div>
     </div>
   </body>
-  <script src="/static/js/rsv_App.js"></script>
+  <script src="/static/js/resv_register.js"></script>
+  <!-- <script src="/static/js/rsv_App.js"></script> -->
   <script src="/static/js/rsv_Calendal.js"></script>
   <script src="/static/js/rsv_customerSelect.js"></script>
-  <script src="/static/js/resv_register.js"></script>
   <script src="/static/js/rsv_SelectMenu.js"></script>
 </html>

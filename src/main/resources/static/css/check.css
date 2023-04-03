@@ -28,7 +28,8 @@ body {
     font-size: 100px;
   }
 
-.home-button{
+
+#home{
     position: fixed;
     left: 96%;
     bottom: 92%;
@@ -36,7 +37,13 @@ body {
     padding-right: 50px;
 
     color: white;
-    color: #183a1d;
+
+}
+
+/* 스크롤 적용 버튼*/
+#home.active{
+    background: transparent;
+    color: black;
 }
 
 ::-webkit-scrollbar {

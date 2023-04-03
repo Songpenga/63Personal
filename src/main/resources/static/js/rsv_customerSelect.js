@@ -77,7 +77,3 @@ function countRsvChild(type){
   count_per_child.innerText = number_child;
   $('#check03').html(sumPerson);
 }
-
-
-/* 결제 금액 계산 */ 
-

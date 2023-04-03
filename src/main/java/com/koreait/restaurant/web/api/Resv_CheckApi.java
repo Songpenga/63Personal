@@ -18,24 +18,23 @@ import java.util.List;
 public class Resv_CheckApi {
 
     @Autowired
-    private Resv_CheckService searchService;
+    private Resv_CheckService checkService;
 
     @GetMapping("/check")
-    public ResponseEntity<CMRespDto<List<DinningMst>>> searchReserveIdAndNumber(CheckReqDto checkReqDto) {
+    public ResponseEntity<CMRespDto<List<DinningMst>>> getReserveData(CheckReqDto checkReqDto) {
         return ResponseEntity
                 .ok()
-                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", searchService.searchReserveIdAndNumber(checkReqDto)));
+                .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", checkService.getReserveData(checkReqDto)));
 
     }
 
     @DeleteMapping("/check/{reserveId}")
     public ResponseEntity<CMRespDto<?>> removeReserve(@PathVariable int reserveId) {
-        searchService.removeReserve(reserveId);
+        checkService.removeReserve(reserveId);
         return ResponseEntity
                 .ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", true));
     }
-
 
 
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koreait.restaurant.repository.Resv_InputRepository">
+
+    <select id="findUserByReserveCheck" parameterType="integer" resultType="com.koreait.restaurant.entity.DinningMst">
+        select
+            reserve_id as reserveId,
+            number,
+            reserve_name as reserveName
+        from
+            dinning_mstz
+        where
+            1 = 1
+        and reserve_id = #{reserveId}
+        and number = #{number}
+        or reserve_name = #{reserveName}
+    </select>
+
+</mapper>

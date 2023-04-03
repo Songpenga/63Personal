@@ -10,7 +10,7 @@ import java.util.List;
 public interface Resv_CheckRepository {
 
 
-   public List<DinningMst> searchReserveIdAndNumber(CheckReqDto searchReqDto);
+   public List<DinningMst> getReserveData(CheckReqDto searchReqDto);
 
    public int saveReserveCheck(CheckReqDto searchReqDto);
 

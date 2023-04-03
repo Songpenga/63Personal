@@ -146,9 +146,8 @@ class SearchService {
         console.log(checkSumAdult);
         console.log(checkSumChild);
         
-        document.getElementById("price").innerText = checkSumAdult + checkSumChild;  
-
-
+        document.getElementById("price").innerText = checkSumAdult + checkSumChild;
+        ImportApi.getInstance().importPayParams.amount =  checkSumAdult + checkSumChild;
 
       });
       
