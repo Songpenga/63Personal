@@ -77,3 +77,10 @@ function countRsvChild(type){
   count_per_child.innerText = number_child;
   $('#check03').html(sumPerson);
 }
+
+function select_mail(domain){
+  console.log(domain);
+ 
+  document.getElementById('email_txt').value = domain;
+
+}

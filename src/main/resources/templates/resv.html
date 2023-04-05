@@ -275,10 +275,8 @@
               <td width="356">
                 <input
                   type="text"
-                  id="cust_nm"
-                  name="cust_nm"
-                  class="product-input"
-                  value=""
+                  id="customer_name"
+                  name="customer_name"
                   style="width: 180px"
                   maxlength="10"
                   title="예약고객 이름 입력"
@@ -295,6 +293,7 @@
                   title="예약고객 연락처 앞자리 선택"
                   style="width: 74px"
                   name="mobile1"
+                  class="mobile"
                 >
                   <option value="010">010</option>
                   <option value="011">011</option>
@@ -308,8 +307,7 @@
                   type="text"
                   id="mobile2"
                   name="mobile2"
-                  class="mobile2"
-                  value=""
+                  class="mobile"
                   style="width: 54px"
                   title="예약고객 연락처 가운데자리 입력"
                   maxlength="4"
@@ -319,8 +317,7 @@
                   type="text"
                   id="mobile3"
                   name="mobile3"
-                  class="mobile3"
-                  value=""
+                  class="mobile"
                   style="width: 54px"
                   title="예약고객 연락처 뒷자리 입력"
                   maxlength="4"
@@ -340,7 +337,6 @@
                   type="text"
                   id="email_1"
                   name="email_1"
-                  
                   value=""
                   style="width: 118px"
                   title="예약고객 이메일 아이디 입력"
@@ -362,7 +358,7 @@
                   id="email_2"
                   title="예약고객 이메일 도메인 선택"
                   style="width: 138px"
-                  onchange="select_mail('email_');"
+                  onchange="select_mail(this.value);"
                 >
                   <option value="self">선택하세요</option>
                   <option value="naver.com">naver.com</option>
@@ -415,18 +411,15 @@
       </div>
 
       <div class="resv_pay">
-        <!-- <a
-          href="#"
-          class="btn_brown_st01 btn_re_pay"
-          onclick="funcCheckRSV('buy');return false;"
-          >결제하기</a
-        > -->
-        <button type="button" id="reserveButton">결제하기</button>
+        <button type="button" 
+                class="btn_brown_st01 btn_re_pay" 
+                id="reserveButton" 
+                onclick="requestPay();"> 결제하기</button>
       </div>
     </div>
   </body>
-  <script src="/static/js/resv_register.js"></script>
-  <!-- <script src="/static/js/rsv_App.js"></script> -->
+  <!-- <script src="/static/js/resv_register.js"></script> -->
+  <script src="/static/js/rsv_App.js"></script>
   <script src="/static/js/rsv_Calendal.js"></script>
   <script src="/static/js/rsv_customerSelect.js"></script>
   <script src="/static/js/rsv_SelectMenu.js"></script>

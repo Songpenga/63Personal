@@ -17,7 +17,7 @@ spring:
 
     url: jdbc:mysql://localhost:3306/restaurant
     username: root
-    password: q1w2e3r4
+    password: q1w2e3r
 
 file:
   path: C:\63building\upload
