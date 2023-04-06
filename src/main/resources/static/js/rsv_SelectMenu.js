@@ -173,5 +173,6 @@ static getInstance(){
       SearchService.getInstance().loadMenuList();
       SearchService.getInstance().checkMenuPrice();
     }
+
   }
 }

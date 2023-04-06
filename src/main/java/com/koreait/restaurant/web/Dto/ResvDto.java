@@ -26,4 +26,6 @@ public class ResvDto {
     private int child;
 
     private String guest;
+
+    private String request;
 }

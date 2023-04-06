@@ -22,6 +22,8 @@ function selectResvTime(value){
       break;      
     }
     menuObj.meals = resvTimeRange;
+    resvObj.resvTime = resvTime;
+    
     $('#check02').html(resvTime);
 }
 
@@ -56,6 +58,8 @@ function countRsvAdult(type){
     count_per_adult.innerText = number_adult;  
   $('#check03').html(sumPerson);
 
+  resvObj.adult = number_adult;
+
 }
 
 function countRsvChild(type){
@@ -76,11 +80,18 @@ function countRsvChild(type){
 
   count_per_child.innerText = number_child;
   $('#check03').html(sumPerson);
+
+  resvObj.child = number_child;
 }
 
 function select_mail(domain){
   console.log(domain);
  
   document.getElementById('email_txt').value = domain;
+  
+  var resvEmail = document.getElementById('email_1').value;
+  var domain = document.getElementById('email_txt').value;
+
+  resvObj.email = resvEmail + '@' + domain;
 
 }

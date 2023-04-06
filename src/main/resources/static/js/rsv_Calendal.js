@@ -149,6 +149,7 @@ $("#resvMon").on("click", "td", function () {
     menuObj.day = weekList.includes(today_week) ? "주말" : "평일";
 
     $("#check01").html(clickedYear + "년" + clickedMonth + "월" + td.text() + "일");
+    resvObj.resvDate = clickedYear + "-" + clickedMonth + "-" + td.text();
     
  });
 

@@ -9,6 +9,6 @@
             dinning_mst
         values
             (0, #{customerName}, #{resvDate}, #{resvTime}, #{number}, #{email},
-            #{adult}, #{child}, #{guest}, #{resvmenu})
+            #{adult}, #{child}, #{guest}, #{request})
     </insert>
 </mapper>

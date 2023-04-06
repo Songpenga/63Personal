@@ -1,30 +1,34 @@
     
+   function requestClick(){
     var number1 = document.getElementById('mobile1').value;
     var number2 = document.getElementById('mobile2').value;
     var number3 = document.getElementById('mobile3').value;
 
+    resvObj.number = number1 +'-' + number2 + '-' +number3;
+
+    resvObj.guest = resvObj.adult + resvObj.child;
+    resvObj.customerName = document.getElementById('customer_name').value;
+    resvObj.request = document.getElementById('order_msg').value;
+
+   }
+
+
     const resvObj = {
-        customerName : document.getElementById('customer_name').value,
-        resvDate :document.getElementById('check01').value,
-        resvTime : document.getElementById('check02').value,
-        number : "Resvnumber",
-        email : "Resvemail",
-        adult : "Resvadult",
-        child : "Resvchild",
-        guest : "5",
-        amount : "100"
+        customerName : "",
+        resvDate :"",
+        resvTime :"",
+        number : "",
+        email : "",
+        adult : "",
+        child : "",
+        guest : "",
+        amount : "",
+        request : ""
     }
 
-    var resvEmail = document.getElementById('email_1').value;
-    var domain = document.getElementById('email_txt').value;
+    // var resvEmail = document.getElementById('email_1').value;
+    // var domain = document.getElementById('email_txt').value;
 
-    resvObj.customerName = document.getElementById('customer_name').value;
-    resvObj.resvDate = document.getElementById('check01').value;
-    resvObj.resvTime = document.getElementById('check02').value;;
-    resvObj.number = number1 +'-' + number2 + '-' +number3;
-    resvObj.email = resvEmail + '@' + domain;
-    resvObj.adult = document.getElementById("count01").innerText;
-    resvObj.child = document.getElementById("count02").innerText;
 
 function requestPay() {
 
@@ -50,13 +54,12 @@ function requestPay() {
                 dataType : "json",
                 success : response => {
                     console.log(response);
-                    successFlag = true;
-                    location.replace('/menulist');
+                    successFlag = true;      
                 }
-            }).done(function (rsp) {
-                location.replace('/menulist');
             })
-        } else {
+            location.href="/menulist";
+          
+        }else{
             alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
         }
     });
