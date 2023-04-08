@@ -30,7 +30,7 @@
             child,
             request
         from
-            dinning_mst
+        dinning_mst
         where
             1 = 1
         and reserve_id = #{reserveId}

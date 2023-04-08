@@ -57,13 +57,6 @@ class ReservePageService {
         return this.#instance;
     }
 
-    // loadReserveData() {
-    //     const inputContents = document.querySelectorAll(".input-contents");
-       
-    //     if(inputContents === null) {
-    //         alert("예약 정보를 다시 한번 확인해주세요.");
-    //     } 
-    // }
 }
 
 class ComponentEvent {
@@ -73,6 +66,14 @@ class ComponentEvent {
             this.#instance = new ComponentEvent();
         }
         return this.#instance;
+    }
+
+    addHomeButtonClickEvent() {
+        const homeButton = document.querySelector(".home-button");
+
+        homeButton.onclick = () => {
+            location.href = `http://localhost:8000/menulist`;
+        }
     }
     
     addClickEventReserveButton1() {
@@ -88,7 +89,7 @@ class ComponentEvent {
             
 
             if(reserveIdValue1 && numberValue !=  null) {
-                location.href = `http://localhost:8000/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
+                location.href = `http://localhost:8000/reservation/check?reserveId=${reserveIdValue1}&number=${numberValue}`;
             } else{
                 alert("데이터를 올바르게 입력해주세요.");
             }
@@ -111,7 +112,7 @@ class ComponentEvent {
             const checkReserve = new CheckReserve(reserveIdValue1, numberValue, reserveIdValue2, reserveNameValue);
 
             if(reserveIdValue2 && reserveNameValue != null) {
-                location.href = `http://localhost:8000/check?reserveId=${reserveIdValue2}&Name=${reserveNameValue}`;
+                location.href = `http://localhost:8000/reservation/check?reserveId=${reserveIdValue2}&Name=${reserveNameValue}`;
             } else{
                 alert("데이터를 올바르게 입력해주세요.");
             }
