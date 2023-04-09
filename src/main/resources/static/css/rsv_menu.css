@@ -1,0 +1,40 @@
+.resv_menu{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.menu_select{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+  border-bottom: 1px solid #ccc;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.la_check{
+  margin-right: 8px;
+  margin: 0;
+  font-size: 100%;
+  align-items: center;
+}
+
+.menu_choice_list{
+  position: relative;
+  margin: auto;
+
+  font-weight: 700;
+
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+}
+
+
+.menu_choice_list .price_info .price {
+  color: #000000;
+  font-weight: 200;
+}

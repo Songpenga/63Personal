@@ -10,8 +10,9 @@
   display: flex;
   justify-content: center;
 }
+
 .menu_select, .hours-wrap{
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -31,6 +32,13 @@
   color: #333;
 }
 
+.section > .tit {
+  color: #000;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 40px;
+}
 .menu_choice_list li.re_menu_sel {
   position: relative;
   float: left;

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koreait.restaurant.repository.UpdateRepository">
+    <select id="selectUser"
+            parameterType="com.koreait.restaurant.web.dto.UpdateUseReqDto"
+            resultType="com.koreait.restaurant.entity.UpdateUserEntity">
+
+        select
+            reserve_id as reserveId,
+            reserve_name as reserveName,
+            reserve_date as reserveDate,
+            reserve_time as reserveTime,
+            number,
+            email,
+            adult,
+            child,
+            guest,
+            request,
+            menu
+        from
+            dinning_mst
+
+        where
+            reserve_id = 1
+        and number = '010-1111-4444'
+    </select>
+
+    <update id="updateUser"
+            parameterType="com.koreait.restaurant.web.dto.UpdateUseReqDto">
+
+        update dinning_mst
+
+        set
+            reserve_time = #{reserveTime},
+            reserve_date= #{reserveDate},
+            adult = #{adult},
+            child = #{child},
+            menu = #{menu}
+
+        where
+            reserve_id = #{reserveId}
+        and number = #{number}
+
+    </update>
+</mapper>
