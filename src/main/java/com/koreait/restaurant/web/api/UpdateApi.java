@@ -16,7 +16,7 @@ public class UpdateApi {
     @Autowired
     private UpdateService updateService;
 
-    @PutMapping("user/{reserveId}")
+    @PutMapping("/user/{reserveId}")
     public ResponseEntity<CMRespDto<?>> modifyUser(@PathVariable String reserveId, @RequestBody UpdateUseReqDto updateUseReqDto) {
         updateService.modifyReserve(updateUseReqDto);
         return ResponseEntity
