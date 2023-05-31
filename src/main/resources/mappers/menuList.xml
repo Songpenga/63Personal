@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.koreait.restaurant.repository.MenuRepository">
+<mapper namespace="com.koreait.restaurant.repository.reserve_Main_Update.MenuRepository">
     <select id="getMenuList"
-            resultType="com.koreait.restaurant.web.dto.MenuListDto">
+            resultType="com.koreait.restaurant.web.dto.reserve_Main_Update.MenuListDto">
         select
             img_id as imgId,
             title_name as titleName,

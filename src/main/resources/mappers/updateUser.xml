@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.koreait.restaurant.repository.UpdateRepository">
+<mapper namespace="com.koreait.restaurant.repository.reserve_Main_Update.UpdateRepository">
     <select id="selectUser"
-            parameterType="com.koreait.restaurant.web.dto.UpdateUseReqDto"
+            parameterType="com.koreait.restaurant.web.dto.reserve_Main_Update.UpdateUseReqDto"
             resultType="com.koreait.restaurant.entity.UpdateUserEntity">
 
         select
@@ -24,12 +24,12 @@
             dinning_mst
 
         where
-            reserve_id = 1
-        and number = '010-1111-4444'
+            reserve_id = {reserveId}
+        and number = {reserveName}
     </select>
 
     <update id="updateUser"
-            parameterType="com.koreait.restaurant.web.dto.UpdateUseReqDto">
+            parameterType="com.koreait.restaurant.web.dto.reserve_Main_Update.UpdateUseReqDto">
 
         update dinning_mst
 
@@ -37,12 +37,10 @@
             reserve_time = #{reserveTime},
             reserve_date= #{reserveDate},
             adult = #{adult},
-            child = #{child},
-            menu = #{menu}
+            child = #{child}
 
         where
             reserve_id = #{reserveId}
-        and number = #{number}
 
     </update>
 </mapper>

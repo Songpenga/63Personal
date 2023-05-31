@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.koreait.restaurant.repository.Resv_CheckRepository">
+<mapper namespace="com.koreait.restaurant.repository.reserve_Check.Resv_CheckRepository">
 
     <resultMap id="dinningMst" type="com.koreait.restaurant.entity.DinningMst">
         <result property="reserveId" column="reserve_id"></result>
@@ -30,7 +30,7 @@
             child,
             request
         from
-        dinning_mst
+            dinning_mst
         where
             1 = 1
         and reserve_id = #{reserveId}
@@ -41,7 +41,7 @@
     </select>
 
 
-    <insert id="saveReserveCheck" parameterType="com.koreait.restaurant.web.dto.CheckReqDto">
+    <insert id="saveReserveCheck" parameterType="com.koreait.restaurant.web.dto.reserve_Check.CheckReqDto">
         insert into dinning_mst
         values
             (0, #{reserveId}, #{reserveName}, #{reserveDate}, #{reserveTime}, #{number}, #{email}, #{adult}, #{child}, #{request})

@@ -4,10 +4,10 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--메뉴가져오기-->
-<mapper namespace="com.koreait.restaurant.repository.Resv_SelectRepository">
+<mapper namespace="com.koreait.restaurant.repository.reserve_Page.Resv_SelectRepository">
 
     <select id="userSelectMenu"
-            parameterType="com.koreait.restaurant.web.dto.Resv_SelectMenuDto"
+            parameterType="com.koreait.restaurant.web.dto.reserve_Page.Resv_SelectMenuDto"
             resultType="com.koreait.restaurant.entity.Resv_SelectMenuEntity">
         select
         code as menuCode,
