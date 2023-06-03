@@ -1,0 +1,59 @@
+.cal-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.prebBtn,.nextBtn {
+  border: none;
+  margin: 15px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.cal_resv{
+  display: flex;
+  justify-content: center;
+  padding: 35px 30px 35px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.cal_left{
+  display: flex;
+  width: 512px;
+  padding: 20px 50px 20px 50px;
+}
+
+#resvMon > thead {
+  font-weight: bold;
+  height: 50px;
+}
+
+#resvMon > tbody {
+  height: 300px;
+  width: 350px;
+  align-items: flex-end;
+}
+
+.cal_resv .cal_right .tbl_time_list thead th {
+  font-weight: 700;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 17px 0 15px 0;
+  text-align: center;
+}
+
+.cal_right .tbl_time_list tbody .first td {
+  padding-top: 15px;
+  background-position: right 21px;
+}
+
+.cal_right .tbl_time_list tbody td {
+  padding: 7px 0;
+  text-align: center;
+}
+
+.sun {
+  color: red;
+}

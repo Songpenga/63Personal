@@ -1,0 +1,69 @@
+.hours-wrap ,.menu_select{
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 40px;
+  display: block;
+
+}
+
+.hours-container{
+  display: flex;
+  justify-content: center;
+}
+
+.menu_select, .hours-wrap{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.hours-wrap{
+  font-size: 16px;
+  max-width: 600px;
+  padding: 30px;
+}
+
+.box {
+  margin-left: 30px;
+}
+
+.hours-wrap ,select {
+  font-size: 16px;
+  color: #333;
+}
+
+.section > .tit {
+  color: #000;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 40px;
+}
+.menu_choice_list li.re_menu_sel {
+  position: relative;
+  float: left;
+  width: 186px;
+  margin-left: 18px;
+  margin-bottom: 5px;
+  padding: 17px 0 20px 0;
+  z-index: 10;
+}
+
+.btn_brown_st01 {
+  display: inline-block;
+  width: 120px;
+  height: 50px;
+  padding: 0 0 0 0;
+  line-height: 50px;
+  background-color: #3c3533;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-align: center;
+  border: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none !important;
+  cursor: pointer;
+  font-family: 나눔고딕,"Nanum Gothic",Gulim,"굴림",sans-serif;
+}

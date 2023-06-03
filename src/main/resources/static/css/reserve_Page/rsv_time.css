@@ -1,0 +1,106 @@
+/* 예약일시선택 */
+
+.cal-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.prebBtn,.nextBtn {
+
+  border: none;
+  margin: 15px;
+
+  width: 30px;
+  height: 30px;
+}
+
+.cal_resv{
+  display: flex;
+  justify-content: center;
+  padding: 35px 30px 35px;
+  box-sizing: border-box;
+}
+
+.cal_right{
+  padding-left: 20px;
+}
+.cal_day{
+  display: flex;
+  width: 512px;
+  padding: 20px 50px 20px 50px;
+}
+
+.timeSelectCheck{
+  border: 1px solid black;
+  display: flex;
+  align-items: end;
+}
+
+.resvTimeButton{
+  padding: 15px;
+}
+
+#resvMon > thead {
+  font-weight: bold;
+  height: 50px;
+}
+
+#resvMon > tbody {
+  height: 300px;
+  width: 350px;
+  align-items: flex-end;
+}
+
+.cal_resv .cal_right .tbl_time_list thead th {
+  font-weight: 700;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 17px 0 15px 0;
+  text-align: center;
+}
+
+.cal_right .tbl_time_list tbody .first td {
+  padding-top: 15px;
+  background-position: right 21px;
+}
+
+.cal_right .tbl_time_list tbody td {
+  padding: 7px 0;
+  text-align: center;
+}
+
+.sun {
+  color: red;
+}
+
+/* 이용시간, 방문시간 */
+
+.hours-container{
+  display: flex;
+  justify-content: center;
+}
+
+ .hours-wrap{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.hours-wrap{
+  font-size: 16px;
+  max-width: 600px;
+  padding: 20px;
+
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+}
+
+.box {
+  margin-left: 30px;
+}
+
+.hours-wrap ,select {
+  font-size: 16px;
+  color: #333;
+}

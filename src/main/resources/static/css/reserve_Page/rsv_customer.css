@@ -1,0 +1,207 @@
+/* 예약시간 table */
+.reservation_chk_box {
+  margin-bottom: 20px;
+}
+
+.tbl_st01 {
+  border-bottom: 1px solid #d9d9d9;
+  width: 80%;
+
+  margin: auto;
+}
+
+.tbl_st01, td.tit_top {
+  padding-left: 20px;
+  background: #f7f3f0;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.tbl_st01 td {
+  padding: 17px 0;
+  text-align: center;
+}
+
+.course_list {
+  margin-bottom: 10px;
+}
+
+.tbl_st01, .total_price {
+  padding-right: 40px;
+  background-color: #ffffff;
+  border-right: 0 none;
+  border-bottom: 0 none;
+  align-items: center;
+}
+
+.total_price{
+  border: 1px solid black;
+  text-align: center;
+}
+.check01{
+  background-color: white;
+}
+/* 상세정보입력 */
+
+.re_content {
+  position: relative;
+  margin: 0 0 30px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.re_content02 {
+  position: relative;
+}
+
+#info_area{
+  text-align: center;
+}
+.tbl_st02, .email_area{
+  text-align: left;
+  border-bottom: 1px solid #c0bcbc;
+}
+
+.re_st01.color_point {
+  border-top: 2px solid #2B2725;
+  /* background: #F7F7F7 url(/r63/images/ko/reservation/bg_h3_tit2.gif) no-repeat scroll 30px top; */
+}
+
+.re_st01 {
+  height: 33px;
+  padding: 16px 20px 0 20px;
+  /* background: url(/r63/images/ko/reservation/bg_h3_tit.gif) no-repeat 30px top; */
+  height: 33px;
+  border: 1px solid #d9d9d9;
+  width: 80%;
+  margin: auto;
+}
+
+.reservation_custom_chk_top {
+  position: absolute;
+  right: 20px;
+  top: -34px;
+  color: #343434;
+}
+
+.re_st01.color_point {
+  border-top: 2px solid #2B2725;
+}
+
+.tbl_st02 {
+  width: 80%;
+  /* table-layout: fixed; */
+}
+
+.tbl_st02 th {
+  padding: 13px 0 13px 28px;
+  /* border-bottom: 1px solid #d9d9d9; */
+  font-weight: 700;
+}
+
+.tbl_st02 td {
+  padding: 13px 0;
+  /* border-bottom: 1px solid #d9d9d9; */
+}
+
+input[type="text"]{
+  padding: 1px 0 1px 10px;
+  height: 21px;
+  line-height: 18px;
+  border: 1px solid #BFBFBF;
+  color: #585858;
+  font-family: "Nanum Gothic";
+}
+
+.bul01 {
+  display: block;
+  padding-left: 8px;
+}
+
+.total_reservation_info ul {
+  float: left;
+  padding: 20px 38px;
+  background: #f7f3f0;
+  border-right: 1px solid #d9d9d9;
+}
+
+.total_reservation_info ul {
+  float: left;
+  padding-right: 45px;
+  margin-right: 8px;
+  width: 20%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.price{
+  display: flex;
+}
+
+.total_reservation_info li{
+  align-items: center;
+}
+
+.total_reservation_info {
+  display: flex;
+  border: 1px solid #3c3533;
+  border-bottom: 1px solid;
+  width: 80%;
+
+  margin: auto;
+}
+
+.total_reservation_info p {
+  float: left;
+  margin: auto;
+  width: 550px;
+  *width: 434px;
+  padding: 0 0 0 40px;
+  font-size: 16px;
+  color: #333333;
+  font-weight: 700;
+}
+
+.total_reservation_info p .price {
+  top: 20px;
+  right: 40px;
+  font-size: 18px;
+  color: #560a0c;
+
+  text-align: right;
+  float: right;
+}
+
+.total_reservation_info p .price span {
+  padding-left: 10px;
+  font-size: 12px;
+
+  float: right;
+}
+
+.resv_pay{
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.btn_brown_st01 {
+  display: inline-block;
+  width: 120px;
+  height: 50px;
+  padding: 0 0 0 0;
+  line-height: 50px;
+  background-color: #3c3533;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-align: center;
+  border: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none !important;
+  cursor: pointer;
+  font-family: 나눔고딕,"Nanum Gothic",Gulim,"굴림",sans-serif;
+}

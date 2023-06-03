@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/static/css/main_Update_Page/header.css">
+    <link rel="stylesheet" href="/static/css/main_Update_Page/common.css">
+    <link rel="stylesheet" href="/static/css/main_Update_Page/update.css">
+    <title>예약변경</title>
+</head>
+<body>
+    <header class="header-container">
+        <h1 class="brand-logo">핫식스</h1>
+        <div class="menu-container">
+            <h3 class="menu">메뉴</h3>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1 class="main-title">예약변경</h1>
+            <div class="title-line"></div>
+            <div  class="main-container">
+                <div class="item-group">
+                    <label class="modification-label">이름</label>
+                    <input type="text" class="modification-input">
+                </div>
+                
+                <div class="item-group">
+                    <label class="modification-label">예약일</label>
+                    <input type="date" class="modification-input">
+                </div>
+
+                <div class="item-group">
+                    <span class="modification-label">예약시간</span>
+                    <select class="modification-input time">
+                        <option value="time1">11:00 ~ 14:00</option>
+                        <option value="time1">14:00 ~ 17:00</option>
+                        <option value="time1">17:00 ~ 20:20</option> 
+                    </select> 
+                </div>
+    
+                <div class="item-group">
+                    <span class="modification-label">인원</span>
+                    <select class="modification-input person">
+                        <option value="">성인</option>
+                        <option value="number">1</option>
+                        <option value="number">2</option>
+                        <option value="number">3</option>
+                        <option value="number">4</option>
+                        <option value="number">5</option>
+                        <option value="number">6</option>
+                        <option value="number">7</option>
+                        <option value="number">8</option>
+                        <option value="number">9</option>
+                        <option value="number">10</option>
+                    </select>
+                </div>
+    
+                <div class="item-group">
+                    <span class="modification-label"></span>
+                    <select class="modification-input child">
+                        <option value="">아동</option>
+                        <option value="number">1</option>
+                        <option value="number">2</option>
+                        <option value="number">3</option>
+                        <option value="number">4</option>
+                        <option value="number">5</option>
+                        <option value="number">6</option>
+                        <option value="number">7</option>
+                        <option value="number">8</option>
+                        <option value="number">9</option>
+                        <option value="number">10</option>
+                    </select>
+                </div>
+    
+                <div class="item-group">
+                    <label class="modification-label">메뉴</label>
+                    <input type="text" class="modification-input">
+                    
+                </div>
+    
+                <div class="item-group">
+                    <label class="modification-label">연락처</label>
+                    <input type="text" class="modification-input">
+                    
+                </div>
+    
+                <div class="item-group">
+                    <label class="modification-label">이메일</label>
+                    <input type="email" class="modification-input">
+                    
+                </div>
+    
+                <div class="item-group">
+                    <label class="modification-label">요청사항</label>
+                    <textarea rows="5" cols="33" name="request">여기에 적어주세요.</textarea>
+                </div>
+                <button type="submit" class="reserve-submit">예약하기</button>
+                <button class="reserve-submitt">예약 불러오기</button>
+            </div>
+
+        </div>
+    </main>
+    <script src="/static/js/main_Update_Page/update.js"></script>
+</body>
+</html>

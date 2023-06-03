@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve</title>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- iamport.payment.js -->
+    <script
+      type="text/javascript"
+      src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"
+    ></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/reserve_Page/rsv_default.css" />
+    <link rel="stylesheet" href="/static/css/reserve_Page/rsv_menu.css" />
+    <link rel="stylesheet" href="/static/css/reserve_Page/rsv_customer.css" />
+    <link rel="stylesheet" href="/static/css/reserve_Page/rsv_bookPage.css" />
+    <link rel="stylesheet" href="/static/css/reserve_Page/rsv_time.css" />
+  </head>
+  <body>
+    <header class="header-container">
+      <h1 class="brand-logo">HOTSIX63</h1>
+    </header>
+
+    <div class="container" style="overflow-y: scroll">
+      <h1 class="resv_title">예약하기</h1>
+
+      <div class="resv_sub_title">
+
+      <div class="per_section">
+        <strong class="tit">
+          STEP1. 예약인원 선택
+        </strong>
+        <div class="customer-container outline">
+          <div class="customer-container">
+            <h3 class="rsv-count"> 대인</h3>
+            <button class="check00 per_minus" onclick='countRsvAdult("minus")'><i class="fa-solid fa-minus"></i></button>          
+            <span id="count01" class="num">0</span>       
+            <button class="check00 per_plus" onclick='countRsvAdult("plus")'><i class="fa-solid fa-plus"></i></button>
+          </div>
+          
+          <div class="customer-container outline">
+            <h3 class="rsv-count"> 소인 </h3>
+            <button class="check00 per_minus" onclick='countRsvChild("minus")'><i class="fa-solid fa-minus"></i></button>
+            <span id="count02" class="num">0</span>         
+            <button class="check00 per_plus" onclick='countRsvChild("plus")'><i class="fa-solid fa-plus"></i></button>
+          </div>
+<!-- 
+          <div>
+            <button class="btn_brown_st01 per_check">예약 인원 확인</button>
+          </div> -->
+        </div>
+      </div>
+    
+      <strong class="tit"> STEP2. 예약날짜 선택   </strong>
+      <h3 class="resv_sub_title_str">예약 일시 선택</h3>          
+      <div class="date-month">
+          <div class="cal_toolbar">
+            <div class="button_wrap">
+                <button type="button" id="month-prev" class="month-move prebBtn" data-ym="2022-04-01"> < </button>
+                <span id="month-this">2022.05</span>
+                <button type="button" id="month-next" class="month-move nextBtn" data-ym="2022-06-01"> > </button>
+            </div>
+          </div>
+      </div>
+      
+
+      <div class="cal_resv">
+        <div class="cal-left">
+          <table
+            id="resvMon"
+            class="Calendar date-month"
+            width="600"
+            height="400"
+            border="1"
+          >
+            <thead>           
+              <tr>
+                <th class="sun">일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+              </tr>
+            </thead>
+            <tbody id="tbl-month" align="top">
+              <tr>
+                <td class="sun"><a>1</a></td>
+                <td class=""><a>2</a></td>
+                <td class=""><a>3</a></td>
+                <td class=""><a>4</a></td>
+                <td class="today"><a>5</a></td>
+                <td class=""><a>6</a></td>
+                <td class="sat"><a>7</a></td>
+              </tr>
+              <tr>
+                <td class="sun">8</td>
+                <td class=""><a>9</a></td>
+                <td class=""><a>10</a></td>
+                <td class=""><a>11</a></td>
+                <td class=""><a>12</a></td>
+                <td class=""><a>13</a></td>
+                <td class=""><a>14</a></td>
+              </tr>
+              <tr>
+                <td class="sun"><a>15</a></td>
+                <td class=""><a>16</a></td>
+                <td class=""><a>17</a></td>
+                <td class=""><a>18</a></td>
+                <td class=""><a>19</a></td>
+                <td class=""><a>20</a></td>
+                <td class=""><a>21</a></td>
+              </tr>
+              <tr>
+                <td class="sun"><a>22</a></td>
+                <td class=""><a>24</a></td>
+                <td class=""><a>24</a></td>
+                <td class=""><a>25</a></td>
+                <td class=""><a>26</a></td>
+                <td class=""><a>27</a></td>
+                <td class=""><a>28</a></td>
+              </tr>
+              <tr>
+                <td class="sun"><a>29</a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+                <td class=""><a></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cal_right">
+          <table class="tbl_time_list">
+            <thead>
+              <tr>
+                <th scope="col">이용시간</th>
+              </tr>
+            </thead>
+            <tbody id="resv_limit_seat">
+              <tr class="first">
+                <td>
+                  <input
+                    type="checkbox"
+                    id="time0"
+                    onclick=""
+                    name="time"
+                    value="1"
+                  />
+                  <label class="la_check" for="time0">12:00~14:00</label>
+                </td>
+              </tr>
+              <tr class="first">
+                <td>
+                  <input
+                    type="checkbox"
+                    id="time2"
+                    onclick=""
+                    name="time"
+                    value="2"
+                  />
+                  <label class="la_check" for="time2">15:00~17:00</label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- 
+      <div class="hours-container">
+        <div class="hours-wrap">
+          <div class="box">
+            이용시간 선택
+            <select id="selectBizHoursNo" name="selectBizHoursNo">
+              <option value="1||1">중식-평일 12:00 ~ 15:00</option>
+              <option value="46||1" selected="selected">석식-평일 18:00 ~ 21:00</option>
+            </select>
+          </div>
+          <div class="box">
+            방문시간 선택
+            <select id="visitResvDateStr" name="visitResvDateStr">
+              <option value="202302211800">18:00</option>
+              <option value="202302211830">18:30</option><option value="202302211900">19:00</option>
+              <option value="202302211930">19:30</option></select>
+          </div>
+        </div>
+      </div> -->
+
+      <h3 class="re_st01 color_point">메뉴선택</h3>
+
+      <div class="resv_menu">
+        <div class="menu_select">
+          <input
+            type="radio"
+            id="주중 점심 A"
+            name="ckbCheck"
+            value="1000"
+            title="주중 점심 A"
+            onclick="funcAddMenuChecked();"
+          />
+
+          <label class="la_check" for="input_add_product0">주중 점심 A</label>
+          <span class="img">
+            <img
+              width="180"
+              height="126"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
+              alt="배너"
+            />
+          </span>
+          <div class="bx_price">
+            <div class="price_info">
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+
+              <p class="price">
+                <span>소인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="btn_more href_link"></a>
+          <div
+            id="layer_type02"
+            class="menu_sel clfix rv_layer_type02 lay_i1"
+            style="display: none"
+          >
+            <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu_select">
+          <input
+            type="radio"
+            id="주중 점심 B"
+            name="ckbCheck"
+            value="2000"
+            title="주중 점심 B"
+            onclick="funcAddMenuChecked();"
+          />
+
+          <label class="la_check" for="input_add_product0">주중 점심 B</label>
+          <span class="img">
+            <img
+              width="180"
+              height="126"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
+              alt="배너"
+            />
+          </span>
+          <div class="bx_price">
+            <div class="price_info">
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+
+              <p class="price">
+                <span>소인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="btn_more href_link"></a>
+          <div
+            id="layer_type02"
+            class="menu_sel clfix rv_layer_type02 lay_i1"
+            style="display: none"
+          >
+            <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu_select">
+          <input
+            type="radio"
+            id="주중 저녁 A"
+            name="ckbCheck"
+            value="3000"
+            title="주중 저녁 A"
+            onclick="funcAddMenuChecked();"
+          />
+
+          <label class="la_check" for="input_add_product0">주중 저녁 A</label>
+          <span class="img">
+            <img
+              width="180"
+              height="126"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
+              alt="배너"
+            />
+          </span>
+          <div class="bx_price">
+            <div class="price_info">
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+
+              <p class="price">
+                <span>소인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="btn_more href_link"></a>
+          <div
+            id="layer_type02"
+            class="menu_sel clfix rv_layer_type02 lay_i1"
+            style="display: none"
+          >
+            <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu_select">
+          <input
+            type="radio"
+            id="주중 저녁 B"
+            name="ckbCheck"
+            value="4000"
+            title="주중 저녁 B"
+            onclick="funcAddMenuChecked();"
+          />
+
+          <label class="la_check" for="input_add_product0">주중 저녁 B</label>
+          <span class="img">
+            <img
+              width="180"
+              height="126"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAADICAMAAAA9W+hXAAAAA1BMVEUYOh3z4H2yAAAANElEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAN1+AABVhDU2QAAAABJRU5ErkJggg=="
+              alt="배너"
+            />
+          </span>
+          <div class="bx_price">
+            <div class="price_info">
+              <p class="price">
+                <span>대인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+
+              <p class="price">
+                <span>소인</span>
+                <span class="mem_num">117,000원</span>
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="btn_more href_link"></a>
+          <div
+            id="layer_type02"
+            class="menu_sel clfix rv_layer_type02 lay_i1"
+            style="display: none"
+          >
+            <div class="width:826px;height:264px;background-color:#FFFFFF">
+              <span style="width: 377px; height: 264px; float: left"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 예약시간 확인 -->
+      <div class="reservation_chk_box">
+        <table class="tbl_st01" id="tbl_st">
+          <colgroup>
+            <col width="20%" />
+            <col width="20%" />
+            <col width="25%" />
+            <col width="25%" />
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="tit_top">예약날짜</td>
+              <td class="check01" id="check01">2023년 02월 21일 (화)</td>
+
+              <td class="tit_top">이용시간</td>
+              <td class="check02">2023년 02월 21일 (화)</td>
+            </tr>
+
+            <tr>
+              <td class="tit_top">인원수</td>
+              <td class="check03" id="check03">0</td>
+
+              <td class="tit_top">선택코스</td>
+              <td class="check04" id="check04">3</td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="re_st01 color_point">상세정보 입력</h3>
+      <div class="re_content mgb0">
+        <p class="reservation_custom_chk_top">
+          <!-- <label for="reservation_custom_chk">예약고객과 이용고객이 다를 경우 체크해 주세요.</label> -->
+        </p>
+        <table
+          class="tbl_st02"
+          summary="예약고객 정보입력하는곳으로 이름, 연락처, 이메일, 남기실말씀을 적어줍니다."
+        >
+          <caption>
+            예약고객 정보입력
+          </caption>
+          <colgroup>
+            <col width="15%" />
+            <col width="38%" />
+            <col width="20%" />
+            <col width="38%" />
+          </colgroup>
+          <tbody id="info_tbl">
+            <tr id="info_area">
+              <th width="75" scope="row">
+                <span class="bul01">
+                  <label for="input_custom_name">이름 *</label></span
+                >
+              </th>
+              <td width="356">
+                <input
+                  type="text"
+                  id="cust_nm"
+                  name="cust_nm"
+                  value=""
+                  style="width: 180px"
+                  maxlength="10"
+                  title="예약고객 이름 입력"
+                  onclick="logincheck();"
+                  onkeyup="setFilter(this);"
+                  onkeypress="setFilter(this);"
+                />
+              </td>
+              <th width="104" scope="row">
+                <span class="bul01">
+                  <label for="input_custom_tel">휴대폰 번호 *</label></span
+                >
+              </th>
+              <td width="392">
+                <select
+                  id="mobile1"
+                  title="예약고객 연락처 앞자리 선택"
+                  style="width: 74px"
+                  name="mobile1"
+                  onclick="logincheck();"
+                >
+                  <option value="010">010</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+                  <option value="019">019</option>
+                </select>
+                -
+                <input
+                  type="text"
+                  id="mobile2"
+                  name="mobile2"
+                  value=""
+                  style="width: 54px"
+                  title="예약고객 연락처 가운데자리 입력"
+                  maxlength="4"
+                  onkeyup="isNumber(this);"
+                  onclick="logincheck();"
+                />
+                -
+                <input
+                  type="text"
+                  id="mobile3"
+                  name="mobile3"
+                  value=""
+                  style="width: 54px"
+                  title="예약고객 연락처 뒷자리 입력"
+                  maxlength="4"
+                  onkeyup="isNumber(this);"
+                  onclick="logincheck();"
+                />
+              </td>
+            </tr>
+
+            <tr id="email_area">
+              <th scope="row">
+                <span class="bul01">
+                  <label for="input_custom_email">이메일</label>
+                </span>
+              </th>
+
+              <td colspan="3">
+                <input
+                  type="text"
+                  id="email_1"
+                  name="email_1"
+                  value=""
+                  style="width: 118px"
+                  title="예약고객 이메일 아이디 입력"
+                  maxlength="25"
+                  onclick="logincheck();"
+                  onkeyup="setFilter(this);"
+                  onkeypress="setFilter(this);"
+                />
+                
+                <input
+                  type="text"
+                  name="email_txt"
+                  id="email_txt"
+                  value=""
+                  style="width: 109px"
+                  title="예약고객 이메일 도메인 직접입력"
+                  maxlength="50"
+                  onclick="logincheck();"
+                  onkeyup="setFilter(this);"
+                  onkeypress="setFilter(this);"
+                />
+
+                <select
+                  name="email_2"
+                  id="email_2"
+                  title="예약고객 이메일 도메인 선택"
+                  style="width: 138px"
+                  onchange="select_mail('email_');"
+                  onclick="logincheck();"
+                >
+                  <option value="self">선택하세요</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="daum.net">daum.net</option>
+                  <option value="hotmail.com">hotmail.com</option>
+                  <option value="msn.com">msn.com</option>
+                  <option value="nate.com">nate.com</option>
+                  <option value="yahoo.co.kr">yahoo.co.kr</option>
+                  <option value="gmail.com">gmail.com</option>
+                  <option value="self">직접입력</option>
+                </select>
+              </td>
+            </tr>
+            <tr id="order_msg1_area">
+              <th scope="row" class="last">
+                <span class="bul01"
+                  ><label for="input_ment">남기실 말씀</label></span
+                >
+              </th>
+              <td colspan="3" class="last">
+                <textarea
+                  id="order_msg"
+                  cols="10"
+                  rows="10"
+                  style="width: 673px; height: 78px"
+                  title="예약고객 남기실 말씀을 입력해 주세요"
+                  name="order_msg"
+                  onkeyup="setFilter(this); chk_Length(this,'200','남기실 말씀');"
+                  onkeypress="setFilter(this);"
+                  maxlength="150"
+                  onclick="logincheck();"
+                ></textarea>
+                <br /><span style="float: right; padding-right: 32px"
+                  >(<span id="msglen">0</span>/200byte)</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="total_reservation_info">
+        <ul>
+          <li>
+            <label class="la_check" for="optPayType1">신용카드</label>
+          </li>
+        </ul>
+        <p>
+          총 결제 금액<span class="price" id="price"
+            ><strong>0원</strong><span class="vat">(0인 / VAT포함)</span></span
+          >
+        </p>
+      </div>
+
+      <div class="resv_pay">
+        <a
+          href="#"
+          class="btn_brown_st01 btn_re_pay"
+          onclick="funcCheckRSV('buy');return false;"
+          >결제하기</a
+        >
+        <button onclick="requestPay()">결제하기</button>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="/static/js/rsv_App.js"></script>
+  <script src="/static/js/rsv_Calendal.js"></script>
+  <script src="/static/js/customer_select.js"></script> -->
+</html>

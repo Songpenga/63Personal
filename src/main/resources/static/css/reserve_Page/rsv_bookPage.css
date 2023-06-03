@@ -1,0 +1,92 @@
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1cm;
+  padding: 40px 20px;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: #183a1d;
+}
+
+.brand-logo {
+  color: aliceblue;
+  font-size: 200%;
+}
+
+.container{
+  margin: auto;
+  margin-top: 40px;
+  display:table;
+  align-items: center;
+  
+  table-layout:fixed;
+  width: 1200px;
+  height: auto;
+}
+
+.resv_title{
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  font-size: 200%;
+}
+
+.resv_sub_title{
+  border-top: 2px solid #2B2725;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: block;
+  height: 33px;
+}
+
+.customer-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-container >.outline{
+  margin : 0 0 0px 30px;
+}
+.rsv-count{
+  font-size: 18px;
+}
+.customer-container >.check00{
+  margin: 30px;
+  padding: 30px;
+  overflow: visible;
+  cursor: pointer;
+  border: 0;
+  font-size: large;
+  color: #260d0d;
+  background-color: #f7f3f0;
+  
+}
+
+.customer-container >.per_check{
+  color: #183a1d;
+}
+
+.per_section{
+  margin-bottom: 30px;
+}
+
+.tit{
+  color: #000;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 250px;
+
+}
+
+.cal_toolbar, .resv_sub_title_str{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120%;
+}
