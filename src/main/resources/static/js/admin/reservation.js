@@ -1,6 +1,9 @@
 window.onload = () => {
     ReservationService.getInstance().loadReservationList();
     ComponentEvent.getInstance().addClickEventSearchButton();
+    ComponentEvent.getInstance().addClickEventRoadReservationManagement();
+    ComponentEvent.getInstance().addClickEventRoadMenuManagement();
+    ComponentEvent.getInstance().addClickEventRoadMenuRegistration();
 }
 
 let searchObj = {
@@ -93,7 +96,7 @@ class ReservationService {
                     <td>${data.adult}</td>
                     <td>${data.child}</td>
                     <td>${data.guest}</td>
-                    <td>${data.request}</td> //reqeust
+                    <td>${data.request}</td>
                 </tr>
             `;
         });
@@ -187,6 +190,31 @@ class ComponentEvent {
             if(window.event.keyCode == 13) {
                 searchButton.click();
             }
+        }
+    }
+
+    addClickEventRoadReservationManagement() {
+        const reservationManagement = document.querySelector(".reservation-management");
+
+        reservationManagement.onclick = () => {
+            location.href = `http://localhost:8000/admin/reservation/management`;
+        }
+
+    }
+
+    addClickEventRoadMenuManagement() {
+        const menuManagement = document.querySelector(".menu-management");
+
+        menuManagement.onclick = () => {
+            location.href = `http://localhost:8000/admin/menu/management`;
+        }
+    }
+
+    addClickEventRoadMenuRegistration() {
+        const menuRegistration = document.querySelector(".menu-registration");
+
+        menuRegistration.onclick = () => {
+            location.href = `http://localhost:8000/admin/register`;
         }
     }
 

@@ -67,6 +67,10 @@ body {
     color: white;
 }
 
+#home a{
+    color: #ffc60b
+}
+
 .home-button:hover {
     cursor: pointer;
 }

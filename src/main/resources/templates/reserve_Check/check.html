@@ -4,79 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/check.css">
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/reserve_Check/check.css">
+    <!-- 폰트, 아이콘 -->
+    <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <title>hotsix</title>
 </head>
 <body>
-    <header class="header-container">hotsix</header>
-    <!-- 홈버튼 -->
-    <h1 class="home-button" id="home"><i class="fa-solid fa-house fa-3x"></i></h1>
+    <div id="container">
+        <header class="header-container">
+            <nav>
+                <h5>Hotsix</h5>
+                <div class="home-button"><a href="/check/page"><i id="home" class="fa-solid fa-house fa-3x"></i></a></div>
+            </nav>
+        </header>
 
+        <div class="main-container">
+            <div><h1 class="page-title">예약 확인</h1></div>
 
-    <div class="main-container">
-        <div><h1 class="page-title">예약 확인</h1></div>
-
-        <div class="reserve-list">
-            <h2 class="main-name">예약 정보 확인</h2>
-            <div class="menu-line"></div>
-
-            <h2 class="menu-name">예약 고객 정보</h2>
-            <div class="main-box">
-                <table class="reserve-contents1" >
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="serve-container">
-                <h2 class="menu-name">예약 날짜</h2>
-                <div class="main-box">
-                    <table class="reserve-contents2">
-                        <tbody>
-                        </tbody> 
-                    </table> 
-                </div>
-                
-                <h2 class="menu-name">인원</h2>
-                <div class="main-box">
-                    <table class="reserve-contents3">
-                        <tbody>
-                        </tbody>
-                    </table> 
-                </div>
-
-                <div class="menu-container"></div>
-
-                <h2 class="menu-name">추가 요청 사항</h2>
-                <div class="main-box">
-                    <table class="reserve-contents4">
-                        <tbody>
-                        </tbody>
-                    </table> 
-                </div>
-                <!-- <h2 class="menu-name">추가 요청 사항</h2>
-                <div class="main-button">
-                    <input type="text" class="request-input">
-                </div> -->
-
-
-
+            <div class="reserve-list">
+                <h2 class="main-name">예약 정보 확인</h2>
                 <div class="menu-line"></div>
-                <div class="group-button">
-                    <button type="button" class="change-button">예약변경</button>
-                    <button id="reserve-delete" type="button" class="delete-button">예약취소</button>
+
+                <h2 class="menu-name">예약 고객 정보</h2>
+                <div class="main-box">
+                    <table class="reserve-contents1" >
+                        <tbody>
+
+                        </tbody>
+                    </table>
                 </div>
-                
+
+                <div class="serve-container">
+                    <h2 class="menu-name">예약 날짜</h2>
+                    <div class="main-box">
+                        <table class="reserve-contents2">
+                            <tbody>
+                            </tbody> 
+                        </table> 
+                    </div>
+                    
+                    <h2 class="menu-name">인원</h2>
+                    <div class="main-box">
+                        <table class="reserve-contents3">
+                            <tbody>
+                            </tbody>
+                        </table> 
+                    </div>
+
+                    <div class="menu-container"></div>
+
+                    <h2 class="menu-name">추가 요청 사항</h2>
+                    <div class="main-box">
+                        <table class="reserve-contents4">
+                            <tbody>
+                            </tbody>
+                        </table> 
+                    </div>
+
+                    <div class="menu-line"></div>
+                    <div class="group-button">
+                        <button type="button" class="change-button"><a href="/update">예약변경</a></button>
+                        <button id="reserve-delete" type="button" class="delete-button">예약취소</button>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script src="/static/js/check.js"></script>
+<script src="/static/js/reserve_Check/check.js"></script>
 </html>

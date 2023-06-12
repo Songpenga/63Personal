@@ -28,8 +28,33 @@
 }
 
 .main-menu {
-    border: 1px solid rgb(172, 113, 123);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    height: 200px;
+    
+    background-color: transparent;
+}
 
+.menu-menu {
+    border: 1px solid rgb(172, 113, 123);
+    
+    background-color: #f8d4d4;
+    color: white;
+}
+
+.menu {
+    color: black;
+    cursor: pointer;
+}
+
+
+
+/*
+.main-menu {
+    border: 1px solid rgb(172, 113, 123);
+    
     background-color: #f8d4d4;
     color: white;
 }
@@ -64,4 +89,4 @@
 
 .sub-menu a li:hover {
     background-color: #f98585;
-}
+} */

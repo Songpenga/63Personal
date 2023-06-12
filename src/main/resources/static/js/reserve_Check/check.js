@@ -1,10 +1,18 @@
 window.onload = () => {
 	CheckService.getInstance().loadReserveData();
+	ComponentEvent.getInstance().addClickEventmodification();
 	ComponentEvent.getInstance().addClickEventDeleteButton();
 }
 
+const URLSearch = new URLSearchParams(location.search);
+
 const homeScroll = document.querySelector("#home");
 const homeHeight = homeScroll.getBoundingClientRect().height;
+
+const sendcheckObj={
+    reserveId : null,
+    number : null
+}
 
 document.addEventListener('scroll', () => {
 	if (window.scrollY > homeHeight) {
@@ -14,7 +22,6 @@ document.addEventListener('scroll', () => {
 	}
 });
 
-const URLSearch = new URLSearchParams(location.search);
 
 class CheckApi {
 	static #instance = null;
@@ -59,7 +66,7 @@ class CheckApi {
             dataType: "json",
             success: (response) => {
                 alert("예약 취소가 완료 되었습니다.");
-				location.href = `http://localhost:8000/check/input`;
+				location.href = `http://localhost:8000/check/page`;
             },
             error: (error) => {
                 alert("예약 취소가 실패 되었습니다. 관리자에게 문의하세요.");
@@ -109,6 +116,13 @@ class CheckService{
 					<td>${data.email}</td>
 				</tr>  
 			`;
+
+			sendcheckObj.reserveId = data.reserveId;
+			sendcheckObj.number = data.number;
+			localStorage.setItem('sendcheckObj', JSON.stringify(sendcheckObj));
+
+
+			console.log(sendcheckObj);
 		});
 		responseData.forEach(data => {
 			reserveContents2.innerHTML += `
@@ -152,6 +166,14 @@ class ComponentEvent {
         }
         return this.#instance;
     }
+
+	addClickEventmodification() {
+		const changeButton = document.querySelector(".change-button");
+
+		changeButton.onclick = () => {
+			location.href = `http://localhost:8000/reservation/modification`;
+		}
+	}
 
 	addClickEventDeleteButton() {
 		const deleteButton = document.querySelector(".delete-button");

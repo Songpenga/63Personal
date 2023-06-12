@@ -75,7 +75,7 @@ class MenuListService {
         });
     }
 }
-                    // <img src="/static/image/kakaofriends.png" class="menu-img"> style="display: none;
+
 class MenuListEvent {
     static #instance = null;
     static getInstance() {

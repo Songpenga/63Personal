@@ -19,7 +19,6 @@ public class SelectApi {
 
     @GetMapping("/search")
     public ResponseEntity<CMRespDto<?>> search(Resv_SelectMenuDto resvSelectMenuDto) {
-//        System.out.println(selectService.getMenu(selectMenuEntity));
         return ResponseEntity.ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(),
                         "Successfully",

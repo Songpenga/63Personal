@@ -11,11 +11,11 @@ public class Resv_CheckController {
 
     @GetMapping("")
     public String loadcheck() {
-        return "/check";
+        return "/reserve_Check/check";
     }
-    @GetMapping("/input")
+    @GetMapping("/page")
     public String loadcheckPage() {
-        return "check_input";
+        return "/reserve_Check/check_page";
     }
 }
 
