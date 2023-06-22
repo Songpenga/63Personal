@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koreait.restaurant.repository.reserve_Page.ResvRepository">
+    <insert id="saveResv" parameterType="com.koreait.restaurant.web.dto.reserve_Page.ResvDto">
+        insert into
+            dinning_mst
+        values
+            (0, #{customerName}, #{resvDate}, #{resvTime}, #{number}, #{email},
+            #{adult}, #{child}, #{guest}, #{request}, #{resvmenu})
+    </insert>
+</mapper>

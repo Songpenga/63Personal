@@ -93,7 +93,7 @@ class ReservationService {
                     <td>${data.adult}</td>
                     <td>${data.child}</td>
                     <td>${data.guest}</td>
-                    <td>${data.reqeust}</td>
+                    <td>${data.request}</td>
                 </tr>
             `;
         });

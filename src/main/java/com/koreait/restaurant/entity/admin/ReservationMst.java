@@ -1,7 +1,17 @@
 package com.koreait.restaurant.entity.admin;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.sql.Time;
 import java.util.Date;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 
 public class ReservationMst {
 
@@ -14,11 +24,11 @@ public class ReservationMst {
 
 //    @ApiModelProperty(value = "예약요일", example = "금요일", required = true)
 //    @NotBlank
-    public Date reserveDate;
+    public String reserveDate;
 
 //    @ApiModelProperty(value = "예약시간", example = "17시", required = true)
 //    @NotBlank
-    public Time reserveTime;
+    public String reserveTime;
 
 //    @ApiModelProperty(value = "이메일", example = "aaa@gmail.com", required = true)
 //    @NotBlank

@@ -11,16 +11,16 @@ import lombok.NoArgsConstructor;
 @Data
 public class ResvMst {
 
-
+    //예약번호
     private int resvId;
-
+    //예약자이름
     private String customerName;
 
-    private int resvDate;
+    private int resvDate; // 예약날짜
 
-    private int resvTime;
+    private int resvTime; //예약시간
 
-    private String resvmenu;
+    private String resvmenu; //예약메뉴
 
     private int number;
 

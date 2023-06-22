@@ -1,73 +1,77 @@
 window.onload = () => {
-    ComponentEvent.getInstance().addClickEventRegisterButton();
-    ComponentEvent.getInstance().addClickEventImgAddButton();
-    ComponentEvent.getInstance().addChangeEventImgFile();
-    ComponentEvent.getInstance().addClickEventImgRegisterButton();
-    ComponentEvent.getInstance().addClickEventImgCancelButton();
+    SearchMenuService.getInstance().clearMenuList();
+    SearchMenuService.getInstance().loadSearchMenus();
+    SearchMenuService.getInstance().setMaxPage();
+    ComponentEvent.getInstance().addScrollEventPaging();
+    ComponentEvent.getInstance().addClickEventDeleteButton();
 }
 
-const menuObj = {
-    menuCode: "",
-    menuName: "",
-    day: "",
-    meals: "",
-    menuAge1: "",
-    menuAge2: "",
-    salesPride: "",
-    explanation: ""
+let maxPage = 0;
+
+const searchObj = {
+    page: 1,
+    searchValue: null,
+    limit: "Y",
+    count: 10
 }
 
-const fileObj = {
-    files: new Array(),
-    formData: new FormData()
-}
-
-class MenuRegisterApi {
+class SearchMenuApi {
     static #instance = null;
     static getInstance() {
         if(this.#instance == null) {
-            this.#instance = new MenuRegisterApi();
+            this.#instance = new SearchMenuApi();
         }
         return this.#instance;
     }
 
-    registerMenu() {
-        let successFlag = false;
+    getTotalCount() {
+        let responseData = null;
 
         $.ajax({
             async: false,
-            type: "post",
-            url: "http://localhost:8000/api/admin/menu",
-            contentType: "application/json",
-            data: JSON.stringify(menuObj),
+            type: "get",
+            url: "http://localhost:8000/api/admin/search/menu/totalcount",
+            // data: searchObj,
             dataType: "json",
             success: response => {
-                successFlag = true;
+                responseData = response.data;
             },
             error: error => {
                 console.log(error);
-                MenuRegisterService.getInstance().setErrors(error.responseJSON.data);
-                
             }
+        })
 
-        });
-
-        return successFlag;
+        return responseData;
     }
 
-    registerImg() {
+    searchMenus() {
+        let responseData = null;
 
         $.ajax({
             async: false,
-            type: "post",
-            url: `http://localhost:8000/api/admin/menu/${menuObj.menuCode}/images`,
-            encType: "multipart/form-data",
-            contentType: false,
-            processData: false,
-            data: fileObj.formData,
+            type: "get",
+            url: "http://localhost:8000/api/admin/menus",
+            data: searchObj,
             dataType: "json",
             success: response => {
-                alert("메뉴 이미지 등록 완료.");
+                responseData = response.data;
+                console.log(response)
+            },
+            error: error => {
+                console.log(error);
+            }
+        })
+
+        return responseData;
+    }
+
+    removeMenu(menuCode) {
+        $.ajax({
+            async: false,
+            type: "delete",
+            url: "http://localhost:8000/api/admin/menu/" + menuCode,
+            dataType: "json",
+            success: response => {
                 location.reload();
             },
             error: error => {
@@ -75,88 +79,74 @@ class MenuRegisterApi {
             }
         })
     }
-
 }
 
-class MenuRegisterService {
+
+class SearchMenuService {
     static #instance = null;
     static getInstance() {
         if(this.#instance == null) {
-            this.#instance = new MenuRegisterService();
+            this.#instance = new SearchMenuService();
         }
         return this.#instance;
     }
 
-    setMenuObjValues() {
-        const registerInputs = document.querySelectorAll(".register-input");
+    setMaxPage() {
+        const totalCount = SearchMenuApi.getInstance().getTotalCount();
+        maxPage = totalCount % 10 == 0 
+            ? totalCount / 10 
+            : Math.floor(totalCount / 10) + 1;
 
-        menuObj.menuCode = registerInputs[0].value;
-        menuObj.menuName = registerInputs[1].value;
-        menuObj.day = registerInputs[2].value;
-        menuObj.meals = registerInputs[3].value;
-        menuObj.menuAge1 = registerInputs[4].value;
-        menuObj.menuAge2 = registerInputs[5].value;
-        menuObj.salesPride = registerInputs[6].value;
-        menuObj.explanation = registerInputs[7].value;
     }
 
-    setErrors(errors) {
-        const errorMessages = document.querySelectorAll(".error-message");
-        this.clearErrors();
-
-        Object.keys(errors).forEach(key => {
-            if(key == "menuCode") {
-                errorMessages[0].innerHTML = errors[key];
-            }else if(key == "menuName") {
-                errorMessages[1].innerHTML = errors[key];
-            }else if(key == "day") {
-                errorMessages[2].innerHTML = errors[key];
-            }else if(key == "meals") {
-                errorMessages[3].innerHTML = errors[key];
-            }else if(key == "menuAge1") {
-                errorMessages[4].innerHTML = errors[key];
-            }else if(key == "menuAge2") {
-                errorMessages[5].innerHTML = errors[key];
-            }else if(key == "salesPride") {
-                errorMessages[6].innerHTML = errors[key];
-            }else if(key == "explanation") {
-                errorMessages[7].innerHTML = errors[key];
-            }
-        })
+    clearMenuList() {
+        const contentContainer = document.querySelector(".content-container");
+        contentContainer.innerHTML = "";
     }
 
-    clearErrors() {
-        const errorMessages = document.querySelectorAll(".error-message");
-        errorMessages.forEach(error => {
-            error.innerHTML = "";
+    loadSearchMenus() {
+        const responseData = SearchMenuApi.getInstance().searchMenus()
+        const contentContainer = document.querySelector(".content-container");
+
+        console.log(responseData);
+        // <img src="/static/images/food w1.png" alt="음식사진" class="menu-img">
+        // <img src="http://localhost:8000/image/menu/${data.saveName != null ? data.saveName : "no_img.png"}" class="menu-img">
+        responseData.forEach((data, index) => {
+            contentContainer.innerHTML += `
+            <div class="content-flex">
+                <div class="info-container">
+                    <div class="menu-desc">
+                        <div class="img-container">
+                            <img src="/static/images/food w1.png" alt="음식사진" class="menu-img">
+                        </div>                    
+                        <div class="menu-info">
+                            <div class="menu-code">${data.menuCode}</div>
+                            <h3 class="menu-name">${data.menuName}</h2>
+                            <div class="info-text3">
+                                <div class="info-text menu-day"><b>${data.day}</b></div>
+                                <div class="info-text menu-meals"><b>&nbsp; ${data.meals}</b></div>
+                            </div>
+                            <div class="info-text1">
+                                <div class="info-text menu-age1"><b>대인: </b>${data.menuAge1}</div>
+                                <div class="info-textmenu-age2"><b>소인: </b>${data.menuAge2}</div>
+                            </div>
+                            <div class="info-text2">
+                                <div class="info-text sales-pride"><b>판매기간: </b>${data.salesPride}</div>
+                            </div>
+                                <div class="menu-icon">
+                                <div class="menu-change"><a href="/templates/admin/menu_correction.html?menuCode=${data.menuCode}"><i class="fa-solid fa-wand-magic-sparkles"></i></a></div>
+                                <button type="button" class="delete-button"><i class="fa-solid fa-eraser"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            `;
         })
     }
 }
-
-
-class ImgFileService {
-    static #instance = null;
-    static getInstance() {
-        if(this.#instance == null) {
-            this.#instance = new ImgFileService();
-        }
-        return this.#instance;
-    }
-
-    getImgPreview() {
-        const menuImg = document.querySelector(".menu-img");
-
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            menuImg.src = e.target.result;
-        }
-
-        reader.readAsDataURL(fileObj.files[0]);
-
-    }
-}
-
 
 class ComponentEvent {
     static #instance = null;
@@ -167,84 +157,31 @@ class ComponentEvent {
         return this.#instance;
     }
 
-    addClickEventRegisterButton() {
-        const registerButton = document.querySelector(".register-button");
+    addScrollEventPaging() {
+        const html = document.querySelector("html");
+        const body = document.querySelector("body");
 
-        registerButton.onclick = () => {
-            MenuRegisterService.getInstance().setMenuObjValues();
-            const successFlag = MenuRegisterApi.getInstance().registerMenu();
-            
-            if(!successFlag) {
-                return;
+        body.onscroll = () => {
+            const scrollPosition = body.offsetHeight - html.clientHeight - html.scrollTop;
+
+            if(scrollPosition < 50 && searchObj.page < maxPage) {
+                searchObj.page++;
+                SearchService.getInstance().loadSearchMenus();
             }
-
-            if(confirm("메뉴 이미지를 등록하시겠습니까?")) {
-                const imgAddButton = document.querySelector(".img-add-button");
-                const imgCancelButton = document.querySelector(".img-cancel-button");
-    
-                imgAddButton.disabled = false;
-                imgCancelButton.disabled = false;
-            }else {
-                location.reload();
-            }
-        }
-
-    }
-
-    addClickEventImgAddButton() {
-        const imgFile = document.querySelector(".img-file");
-        const addButton = document.querySelector(".img-add-button");
-
-        addButton.onclick = () => {
-            imgFile.click();
         }
     }
 
-    addChangeEventImgFile() {
-        const imgFile = document.querySelector(".img-file");
+    addClickEventDeleteButton() {
+        var deleteButton = document.querySelectorAll(".delete-button");
 
-        imgFile.onchange = () => {
-            const formData = new FormData(document.querySelector(".img-form"));
-            let changeFlag = false;
-
-            fileObj.files.pop();
-
-            formData.forEach(value => {
-                console.log(value);
-
-                if(value.size != 0) {
-                    fileObj.files.push(value);
-                    changeFlag = true;
+        deleteButton.forEach((button, index) => {
+            button.onclick = () => {
+                if(confirm("정말로 삭제하시겠습니까?")) {
+                    const menuCode = document.querySelectorAll(".menu-code")[index].textContent;
+                    SearchMenuApi.getInstance().removeMenu(menuCode);
                 }
-            });
-
-            if(changeFlag) {
-                const imgRegisterButton = document.querySelector(".img-register-button");
-                imgRegisterButton.disabled = false;
-
-                ImgFileService.getInstance().getImgPreview();
-                imgFile.value = null;
             }
-
-        }
+        })
     }
 
-    addClickEventImgRegisterButton() {
-        const imgRegisterButton = document.querySelector(".img-register-button");
-
-        imgRegisterButton.onclick = () => {
-            fileObj.formData.append("files", fileObj.files[0]);
-            MenuRegisterApi.getInstance().registerImg();
-        }
-    }
-
-    addClickEventImgCancelButton() {
-        const imgCancelButton = document.querySelector(".img-cancel-button");
-
-        imgCancelButton.onclick = () => {
-            if(confirm("정말로 메뉴 등록을 취소하시겠습니까?")) {
-                location.reload();
-            }
-        }
-    }
 }

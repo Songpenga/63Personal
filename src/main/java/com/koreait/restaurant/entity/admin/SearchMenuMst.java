@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class SearchMenuMst {
-    private int menuId;
     private String menuCode;
     private String menuName;
     private String day;
@@ -16,7 +15,6 @@ public class SearchMenuMst {
     private String menuAge1;
     private String menuAge2;
     private String salesPride;
-    private String explanation;
-    private String saveName;
+//    private String saveName;
 
 }

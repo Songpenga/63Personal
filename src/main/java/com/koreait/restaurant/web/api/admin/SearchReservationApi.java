@@ -1,9 +1,9 @@
 package com.koreait.restaurant.web.api.admin;
 
 import com.koreait.restaurant.aop.annotation.ParamsAspect;
-import com.koreait.restaurant.service.SearchReservationService;
+import com.koreait.restaurant.service.admin.SearchReservationService;
 import com.koreait.restaurant.web.dto.CMRespDto;
-import com.koreait.restaurant.web.dto.SearchReservationReqDto;
+import com.koreait.restaurant.web.dto.admin.SearchReservationReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

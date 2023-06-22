@@ -3,11 +3,11 @@ package com.koreait.restaurant.web.api.admin;
 import com.koreait.restaurant.aop.annotation.ParamsAspect;
 import com.koreait.restaurant.aop.annotation.ValidAspect;
 import com.koreait.restaurant.entity.admin.ReservationMst;
-import com.koreait.restaurant.service.ReservationService;
+import com.koreait.restaurant.service.admin.ReservationService;
 import com.koreait.restaurant.web.dto.CMRespDto;
-import com.koreait.restaurant.web.dto.ReservationReqDto;
-import com.koreait.restaurant.web.dto.SearchNumberListReqDto;
-import com.koreait.restaurant.web.dto.SearchReqDto;
+import com.koreait.restaurant.web.dto.admin.ReservationReqDto;
+import com.koreait.restaurant.web.dto.admin.SearchNumberListReqDto;
+import com.koreait.restaurant.web.dto.admin.SearchReqDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +38,8 @@ public class ReservationApi {
     @ValidAspect
     @GetMapping("/reservations")
     public ResponseEntity<CMRespDto<List<ReservationMst>>> searchReservation(SearchReqDto searchReqDto, BindingResult bindingResult) {
+        System.out.println(searchReqDto);
+
         return ResponseEntity
                 .ok()
                 .body(new CMRespDto<>(HttpStatus.OK.value(), "Successfully", reservationService.searchReservation(searchReqDto)));

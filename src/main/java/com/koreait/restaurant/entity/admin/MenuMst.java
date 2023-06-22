@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class MenuMst {
 
 //    @ApiModelProperty(hidden = true)
-    private int menuId;
+//    private int menuId;
 
 //    @ApiModelProperty(value = "메뉴코드", example = "메뉴-001")
     private String menuCode;
@@ -33,6 +33,8 @@ public class MenuMst {
 //    @ApiModelProperty(value = "판매기간", example = "상시")
     private String salesPride;
 
-//    @ApiModelProperty(value = "설명")
-    private String explanation;
+//    //    @ApiModelProperty(value = "설명")
+//    private String explanation;
+
 }
+

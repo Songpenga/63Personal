@@ -1,9 +1,9 @@
 package com.koreait.restaurant.web.api.admin;
 
 import com.koreait.restaurant.aop.annotation.ParamsAspect;
-import com.koreait.restaurant.service.SearchMenuService;
+import com.koreait.restaurant.service.admin.SearchMenuService;
 import com.koreait.restaurant.web.dto.CMRespDto;
-import com.koreait.restaurant.web.dto.SearchMenuReqDto;
+import com.koreait.restaurant.web.dto.admin.SearchMenuReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +27,6 @@ public class SearchMenuApi {
                         searchMenuService.getSearchMenus(searchMenuReqDto)));
 
     }
-
-
 
     @ParamsAspect
     @GetMapping("/search/menu/totalcount")

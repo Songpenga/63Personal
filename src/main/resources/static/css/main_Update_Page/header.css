@@ -1,0 +1,20 @@
+.brand-logo{
+    /* border: 1px solid wheat; */
+    justify-content: center;
+    align-items: center; 
+
+    margin-left: 43%;
+
+    color: white;
+    font-size: 50px;
+
+    font-family: '국립박물관문화재단클래식B';
+}
+
+.menu-container { /* 상단 메뉴바 */
+    /* border: 1px solid wheat; */
+    display: flex;
+    
+}
+
+
