@@ -10,14 +10,14 @@
             parameterType="com.koreait.restaurant.web.dto.reserve_Page.Resv_SelectMenuDto"
             resultType="com.koreait.restaurant.entity.Resv_SelectMenuEntity">
         select
-        code as menuCode,
-        name as menuName,
-        day,
-        meals,
-        age1 as adultPrice,
-        age2 as childPrice
+            menu_code as menuCode,
+            menu_name as menuName,
+            day,
+            meals,
+            menu_age1 as adultPrice,
+            menu_age2 as childPrice
         from
-        admin_menu
+            admin_menu
 
         where
         day = #{day}
